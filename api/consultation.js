@@ -108,19 +108,21 @@ module.exports = async function handler(req, res) {
 
     // Clean and validate Supabase URL & Key
     const supabaseUrl = cleanSupabaseUrl(process.env.SUPABASE_URL || DEFAULT_SUPABASE_URL);
+    // Prioritize SUPABASE_SERVICE_ROLE_KEY (server-side only on Vercel, safely bypasses RLS)
+    // Fall back to SUPABASE_ANON_KEY (evaluated against the narrow INSERT RLS policy)
     const supabaseKey = cleanApiKey(
-      process.env.SUPABASE_ANON_KEY ||
       process.env.SUPABASE_SERVICE_ROLE_KEY ||
+      process.env.SUPABASE_ANON_KEY ||
       process.env.SUPABASE_KEY
     );
 
     // Check if Supabase key is configured in Vercel
     if (!supabaseKey) {
-      console.warn('SUPABASE_ANON_KEY environment variable is not configured yet in Vercel.');
+      console.warn('SUPABASE_ANON_KEY / SUPABASE_SERVICE_ROLE_KEY environment variable is not configured yet in Vercel.');
       return res.status(200).json({
         success: true,
         referenceId: 'DEMO-' + Math.floor(100000 + Math.random() * 900000),
-        message: 'Enquiry received in Node.js backend. (Add SUPABASE_ANON_KEY in Vercel to save to live Supabase database)',
+        message: 'Enquiry received in Node.js backend. (Configure Supabase keys in Vercel to save to live database)',
         data: { name: patientName, phone: patientPhone, treatment, country }
       });
     }
@@ -165,10 +167,13 @@ module.exports = async function handler(req, res) {
     };
 
     // Insert consultation record into public.consultations table
-    let { data, error } = await supabase
+    // NOTE: We intentionally omit .select()!
+    // Chaining .select() sends "Prefer: return=representation", which requires a SELECT RLS policy.
+    // For anonymous consultation submissions, public SELECT is forbidden to protect patient privacy.
+    // Without .select(), Supabase performs a minimal return ("return=minimal"), requiring ONLY the INSERT RLS policy.
+    let { error } = await supabase
       .from('consultations')
-      .insert([consultationRecord])
-      .select();
+      .insert([consultationRecord]);
 
     // Fallback: If 'name' is reported missing in the schema cache, retry once with 'full_name'
     if (error && error.code === 'PGRST204' && typeof error.message === 'string' && error.message.includes("'name'")) {
@@ -181,10 +186,8 @@ module.exports = async function handler(req, res) {
       };
       const retryResult = await supabase
         .from('consultations')
-        .insert([fallbackRecord])
-        .select();
+        .insert([fallbackRecord]);
       if (!retryResult.error) {
-        data = retryResult.data;
         error = null;
       } else {
         error = retryResult.error;
@@ -204,17 +207,17 @@ module.exports = async function handler(req, res) {
         code: error.code || 'PGRST_ERROR',
         error: error.message,
         details: error.details || null,
-        hint: error.hint || 'Verify table exists in Supabase public schema and column names match.'
+        hint: error.hint || 'Verify table exists in Supabase public schema and RLS INSERT policy is configured.'
       });
     }
 
-    const savedId = (data && data[0] && data[0].id) ? data[0].id : ('MED-' + Date.now().toString().slice(-6));
+    const referenceId = 'MED-' + Date.now().toString().slice(-6);
 
     return res.status(200).json({
       success: true,
-      referenceId: savedId,
+      referenceId: referenceId,
       message: 'Consultation enquiry saved successfully to Supabase database!',
-      record: data && data[0] ? data[0] : consultationRecord
+      record: consultationRecord
     });
   } catch (err) {
     console.error('Unexpected server error:', err);
