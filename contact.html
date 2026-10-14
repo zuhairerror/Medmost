@@ -3,31 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact MEDMOST | International Patient Coordination Desk</title>
+  <title>Contact Us | MEDMOST Medical Tourism India</title>
   <meta name="description" content="Get in touch with MEDMOST for medical tourism coordination in India. Phone, WhatsApp, and consultation inquiry." />
   <link rel="stylesheet" href="css/style.css" />
   <link rel="icon" type="image/svg+xml" href="assets/images/logo.svg" />
   <style>
     .card-replica {
-      background: linear-gradient(135deg, #07261B 0%, #0E4432 100%);
-      border: 2px solid rgba(212, 175, 55, 0.5);
+      background: linear-gradient(135deg, var(--color-turquoise-950) 0%, var(--color-turquoise-900) 100%);
+      border: 2px solid var(--color-turquoise-600);
       border-radius: var(--radius-xl);
       padding: 2.5rem;
       color: #FFFFFF;
-      box-shadow: 0 15px 35px rgba(5, 26, 18, 0.4);
+      box-shadow: 0 15px 35px rgba(4, 47, 46, 0.25);
       position: relative;
       overflow: hidden;
-    }
-    .card-replica-grid {
-      display: grid;
-      grid-template-columns: 1fr 140px;
-      gap: 2rem;
-      align-items: center;
-    }
-    @media (max-width: 600px) {
-      .card-replica-grid {
-        grid-template-columns: 1fr;
-      }
     }
   </style>
 </head>
@@ -40,11 +29,12 @@
     <section class="page-banner">
       <div class="container">
         <div class="breadcrumb">
-          <a href="index.html">Home</a> &nbsp;/&nbsp; <span>Contact Us</span>
+          <a href="index.html" target="_blank" rel="noopener noreferrer" data-i18n="nav_home">Home</a> &nbsp;/&nbsp; 
+          <span data-i18n="nav_contact">Contact Us</span>
         </div>
         <h1>Contact & Communication Channels</h1>
         <p>
-          Connect directly with our patient coordination team. Built using the MEDMOST reference card identity.
+          Connect directly with our patient coordination desk. We are here to answer your questions regarding medical treatment in India.
         </p>
       </div>
     </section>
@@ -54,125 +44,97 @@
       <div class="container">
         <div style="display:grid; grid-template-columns:1fr 1fr; gap:3.5rem;">
           
-          <!-- Left Column: Official Card Details & Channel Hub -->
+          <!-- Left Column: Official Contact Channels & Placeholders -->
           <div>
-            <div class="section-tag gold" style="margin-bottom:0.75rem;">Official Card Reference</div>
-            <h2 style="font-size:1.8rem; margin-bottom:1rem;" class="text-forest">Communication Channels</h2>
+            <div class="section-tag yellow" style="margin-bottom:0.75rem;">Official Card Reference</div>
+            <h2 style="font-size:1.8rem; margin-bottom:1rem;" class="text-turquoise">Communication Channels</h2>
             <p style="color:var(--color-text-muted); line-height:1.7; margin-bottom:2rem;">
-              The contact details below are structured directly from your MEDMOST business card reference. All placeholder items can be edited or confirmed as you finalize your contact infrastructure.
+              The contact details below are structured directly from your MEDMOST brand references. All placeholders can be confirmed or updated as your communication channels finalize.
             </p>
 
-            <!-- Physical / Digital Card Replica Preview -->
+            <!-- Card Replica -->
             <div class="card-replica" style="margin-bottom:2.5rem;">
-              <div class="card-replica-grid">
+              <img src="assets/images/logo-white.svg" alt="MEDMOST Logo" style="height:44px; margin-bottom:0.75rem;" />
+              <div style="font-size:0.85rem; color:var(--color-yellow-300); font-weight:700; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:1.25rem;">
+                “World-Class Medical Treatment in India”
+              </div>
+              
+              <div style="display:flex; flex-direction:column; gap:0.75rem; font-size:0.925rem; color:#CCFBF1;">
                 <div>
-                  <img src="assets/images/logo-white.svg" alt="MEDMOST Logo" style="height:44px; margin-bottom:0.75rem;" />
-                  <div style="font-size:0.85rem; color:var(--color-gold-300); font-weight:700; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:1.25rem;">
-                    “World-Class Medical Treatment in India”
-                  </div>
-                  
-                  <div style="display:flex; flex-direction:column; gap:0.5rem; font-size:0.9rem; color:#E2ECE7;">
-                    <div>
-                      <strong>Tel:</strong> 
-                      <span style="color:#FFFFFF; font-weight:700;">+7 960 1726800999</span>
-                    </div>
-                    <div>
-                      <strong>WhatsApp:</strong> 
-                      <a href="https://wa.me/79601726800999" target="_blank" rel="noopener noreferrer" style="color:#A7F3D0; text-decoration:underline;">Click to Chat on WhatsApp</a>
-                    </div>
-                    <div>
-                      <strong>Email:</strong> 
-                      <span style="color:#A3BFB3;">[Pending Confirmation - Placeholder]</span>
-                    </div>
-                    <div>
-                      <strong>Website:</strong> 
-                      <span style="color:#A3BFB3;">[Pending Domain Confirmation]</span>
-                    </div>
-                  </div>
+                  <strong>Phone / Card Number:</strong><br />
+                  <span style="color:#FFFFFF; font-weight:700; font-size:1.05rem;">+7 960 1726800999</span>
+                  <small style="color:var(--color-yellow-300); display:block;">* Sample number from card - pending final confirmation</small>
                 </div>
-
-                <!-- QR Code Box inside Card Replica -->
-                <div style="text-align:center;">
-                  <div style="background:#FFFFFF; padding:0.75rem; border-radius:var(--radius-md); display:inline-block; border:1px solid rgba(212, 175, 55, 0.4); cursor:pointer;" onclick="showQrDemo()">
-                    <svg width="100" height="100" viewBox="0 0 200 200" fill="#0E4D38">
-                      <rect x="20" y="20" width="50" height="50" fill="none" stroke="#0E4D38" stroke-width="10"/>
-                      <rect x="35" y="35" width="20" height="20" fill="#0E4D38"/>
-                      <rect x="130" y="20" width="50" height="50" fill="none" stroke="#0E4D38" stroke-width="10"/>
-                      <rect x="145" y="35" width="20" height="20" fill="#0E4D38"/>
-                      <rect x="20" y="130" width="50" height="50" fill="none" stroke="#0E4D38" stroke-width="10"/>
-                      <rect x="35" y="145" width="20" height="20" fill="#0E4D38"/>
-                      <rect x="85" y="25" width="15" height="15"/>
-                      <rect x="85" y="55" width="15" height="25"/>
-                      <rect x="25" y="85" width="20" height="15"/>
-                      <rect x="60" y="85" width="25" height="15"/>
-                      <rect x="95" y="95" width="15" height="15"/>
-                      <rect x="120" y="85" width="25" height="20"/>
-                      <rect x="160" y="85" width="15" height="30"/>
-                      <rect x="85" y="130" width="20" height="20"/>
-                      <rect x="115" y="125" width="25" height="15"/>
-                      <rect x="150" y="130" width="25" height="25"/>
-                      <rect x="85" y="165" width="30" height="15"/>
-                      <rect x="135" y="165" width="40" height="15"/>
-                    </svg>
-                  </div>
-                  <div style="font-size:0.75rem; color:var(--color-gold-300); margin-top:0.4rem; font-weight:600;">
-                    Sample QR Placeholder
-                  </div>
+                <div>
+                  <strong>WhatsApp Support:</strong><br />
+                  <a href="https://wa.me/79601726800999" target="_blank" rel="noopener noreferrer" style="color:#A5F3FC; text-decoration:underline;">Click to Chat on WhatsApp &rarr;</a>
+                </div>
+                <div>
+                  <strong>Official Email:</strong><br />
+                  <span style="color:#94A3B8;">enquiries@medmost.com (Pending confirmation placeholder)</span>
+                </div>
+                <div>
+                  <strong>Office Address:</strong><br />
+                  <span style="color:#94A3B8;">New Delhi NCR, India (Coordination Desk)</span>
+                </div>
+                <div>
+                  <strong>Official Website:</strong><br />
+                  <span style="color:#94A3B8;">www.medmost.com (Placeholder)</span>
                 </div>
               </div>
             </div>
 
-            <!-- Notice on placeholders -->
+            <!-- Verification Notice -->
             <div class="notice-box">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
               <div>
-                <strong>Verification Alert for Founder:</strong>
+                <strong>Editable Contact Placeholders:</strong>
                 <p style="margin-top:0.25rem; font-size:0.85rem;">
-                  The card phone number (+7 960 1726800999) and QR code destination are currently set as placeholders as requested. Once you provide your final email, confirmed telephone line, and website URL, they will be updated in one place.
+                  As instructed, no personal email, unconfirmed phone lines, or physical office addresses have been invented. These editable placeholders will be updated with your confirmed official details.
                 </p>
               </div>
             </div>
           </div>
 
-          <!-- Right Column: Interactive Consultation & Enquiry Form -->
+          <!-- Right Column: Direct Message Form -->
           <div>
             <div style="background:#FFFFFF; border:1px solid var(--color-border); border-radius:var(--radius-xl); padding:2.5rem; box-shadow:var(--shadow-md);">
               <span class="section-tag" style="margin-bottom:0.5rem;">Fast Response</span>
-              <h3 style="font-size:1.5rem; margin-bottom:0.5rem;" class="text-forest">Send Us a Direct Message</h3>
+              <h3 style="font-size:1.5rem; margin-bottom:0.5rem;" class="text-turquoise">Send Us a Direct Message</h3>
               <p style="font-size:0.9rem; color:var(--color-text-muted); margin-bottom:1.5rem;">
-                Fill out this enquiry form. For this first version, no data is saved to a backend database.
+                Submit your query below. For this initial version, no patient data is stored in a backend database.
               </p>
 
               <form id="contact-page-form" onsubmit="handleDemoFormSubmit(event, 'contact')">
                 <div class="form-group">
-                  <label class="form-label" for="contact-name">Full Name *</label>
+                  <label class="form-label" for="contact-name" data-i18n="form_fullname">Full Name *</label>
                   <input type="text" id="contact-name" class="form-control" placeholder="Your full name" required />
                 </div>
 
                 <div class="form-row">
                   <div class="form-group">
-                    <label class="form-label" for="contact-country">Country of Residence *</label>
+                    <label class="form-label" for="contact-country" data-i18n="form_country">Country of Residence *</label>
                     <input type="text" id="contact-country" class="form-control" placeholder="e.g. Russia, UK, UAE" required />
                   </div>
                   <div class="form-group">
-                    <label class="form-label" for="contact-phone">WhatsApp / Phone *</label>
+                    <label class="form-label" for="contact-phone" data-i18n="form_phone">WhatsApp / Phone *</label>
                     <input type="tel" id="contact-phone" class="form-control" placeholder="e.g. +7 999 000 0000" required />
                   </div>
                 </div>
 
                 <div class="form-group">
-                  <label class="form-label" for="contact-email">Email Address *</label>
+                  <label class="form-label" for="contact-email" data-i18n="form_email">Email Address *</label>
                   <input type="email" id="contact-email" class="form-control" placeholder="your.email@example.com" required />
                 </div>
 
                 <div class="form-group">
-                  <label class="form-label" for="contact-treatment">Treatment Interest</label>
+                  <label class="form-label" for="contact-treatment" data-i18n="form_treatment">Treatment Interest</label>
                   <select id="contact-treatment" class="form-control">
                     <option value="">Select Treatment (Optional)...</option>
-                    <option value="cardiology">Cardiology & Heart Surgery</option>
-                    <option value="oncology">Oncology & Cancer Care</option>
-                    <option value="orthopaedics">Orthopaedics & Joint Replacement</option>
-                    <option value="neurosurgery">Neurosurgery & Neurology</option>
+                    <option value="cardiology">Cardiology and Heart Surgery</option>
+                    <option value="oncology">Oncology and Cancer Care</option>
+                    <option value="orthopaedics">Orthopaedics and Joint Replacement</option>
+                    <option value="neurosurgery">Neurology and Neurosurgery</option>
                     <option value="gastroenterology">Gastroenterology</option>
                     <option value="urology">Urology</option>
                     <option value="transplant">Organ Transplantation</option>
@@ -188,7 +150,7 @@
 
                 <label class="form-checkbox-label">
                   <input type="checkbox" required />
-                  <span>I agree to be contacted by MEDMOST regarding this enquiry. (Demo form - no real data saved).</span>
+                  <span data-i18n="form_consent">I agree to be contacted by MEDMOST regarding this enquiry. (Demo form - no real data saved).</span>
                 </label>
 
                 <div style="margin-top: 1.5rem;">
@@ -206,6 +168,7 @@
 
   <div id="site-footer-container"></div>
 
+  <script src="js/translations.js"></script>
   <script src="js/components.js"></script>
   <script src="js/main.js"></script>
   <script>

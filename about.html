@@ -17,7 +17,8 @@
     <section class="page-banner">
       <div class="container">
         <div class="breadcrumb">
-          <a href="index.html">Home</a> &nbsp;/&nbsp; <span>About Us</span>
+          <a href="index.html" target="_blank" rel="noopener noreferrer" data-i18n="nav_home">Home</a> &nbsp;/&nbsp; 
+          <span data-i18n="nav_about">About Us</span>
         </div>
         <h1>About MEDMOST</h1>
         <p>
@@ -31,7 +32,7 @@
       <div class="container">
         <div style="display:grid; grid-template-columns:1.1fr 0.9fr; gap:3.5rem; align-items:center;">
           <div>
-            <span class="section-tag gold">Our Purpose</span>
+            <span class="section-tag yellow">Our Purpose</span>
             <h2 style="margin-bottom:1.25rem;">World-Class Medical Treatment in India</h2>
             <p style="font-size:1.05rem; line-height:1.75; color:var(--color-text-muted); margin-bottom:1.25rem;">
               <strong>MEDMOST</strong> was established to solve a critical global challenge: high-quality medical care should not be out of reach because of exorbitant costs or prolonged waiting times in a patient's home country.
@@ -42,29 +43,70 @@
             
             <div style="display:flex; flex-direction:column; gap:0.75rem;">
               <div style="display:flex; align-items:center; gap:0.75rem;">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="color:var(--color-forest-700);"><polyline points="20 6 9 17 4 12"/></svg>
-                <span style="font-weight:600; color:var(--color-forest-900);">Patient-Centric Transparency</span>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="color:var(--color-turquoise-600);"><polyline points="20 6 9 17 4 12"/></svg>
+                <span style="font-weight:600; color:var(--color-text-heading);">Patient-Centric Transparency</span>
               </div>
               <div style="display:flex; align-items:center; gap:0.75rem;">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="color:var(--color-forest-700);"><polyline points="20 6 9 17 4 12"/></svg>
-                <span style="font-weight:600; color:var(--color-forest-900);">No Biased Recommendations</span>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="color:var(--color-turquoise-600);"><polyline points="20 6 9 17 4 12"/></svg>
+                <span style="font-weight:600; color:var(--color-text-heading);">Clinical Advisory Led by Qualified Medical Doctors</span>
               </div>
               <div style="display:flex; align-items:center; gap:0.75rem;">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="color:var(--color-forest-700);"><polyline points="20 6 9 17 4 12"/></svg>
-                <span style="font-weight:600; color:var(--color-forest-900);">Full Cross-Cultural Assistance</span>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="color:var(--color-turquoise-600);"><polyline points="20 6 9 17 4 12"/></svg>
+                <span style="font-weight:600; color:var(--color-text-heading);">Full Cross-Cultural & Multilingual Assistance</span>
               </div>
             </div>
           </div>
 
           <div>
-            <img src="assets/images/consultation.jpg" alt="Doctor Consultation" style="border-radius:var(--radius-xl); box-shadow:var(--shadow-lg); width:100%; object-fit:cover;" />
+            <img src="assets/images/consultation.jpg" alt="Doctor Consultation" style="border-radius:var(--radius-xl); box-shadow:var(--shadow-md); width:100%; object-fit:cover;" />
+          </div>
+        </div>
+
+        <!-- Medical Leadership Highlights -->
+        <div style="margin-top: 5rem;">
+          <div class="section-header">
+            <div class="section-tag yellow">Our Medical Advisors</div>
+            <h2 class="section-title">Meet Our Doctors</h2>
+            <p class="section-desc">
+              Clinical case evaluations at MEDMOST are guided by qualified medical professionals.
+            </p>
+          </div>
+
+          <div class="doctors-preview-grid">
+            <div class="doctor-profile-card primary-doctor">
+              <div class="doctor-photo-wrap" style="height:320px;">
+                <img src="assets/images/dr-sharik-khan.jpg" alt="Dr. Sharik Khan" />
+              </div>
+              <div class="doctor-card-info">
+                <h3>Dr. Sharik Khan</h3>
+                <div class="doctor-designation">Chief Specialist — CHIT Specialist</div>
+                <div class="doctor-edu-box">MBBS — KSMA University, Kyrgyzstan</div>
+                <a href="doctor-sharik-khan.html" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+                  View Full Profile &rarr;
+                </a>
+              </div>
+            </div>
+
+            <div class="doctor-profile-card">
+              <div class="doctor-photo-wrap" style="height:320px;">
+                <img src="assets/images/dr-salah.jpg" alt="Dr. Salah" />
+              </div>
+              <div class="doctor-card-info">
+                <h3>Dr. Salah</h3>
+                <div class="doctor-designation">Medical Advisor & Clinical Coordinator</div>
+                <div class="doctor-edu-box">MBBS — KSMA University, Kyrgyzstan</div>
+                <a href="doctor-salah.html" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">
+                  View Full Profile &rarr;
+                </a>
+              </div>
+            </div>
           </div>
         </div>
 
         <!-- Core Guiding Values -->
         <div style="margin-top: 5rem;">
           <div class="section-header">
-            <div class="section-tag gold">Ethical Foundations</div>
+            <div class="section-tag yellow">Ethical Foundations</div>
             <h2 class="section-title">Our Guiding Values</h2>
             <p class="section-desc">
               We operate on an unwavering code of medical ethics, honesty, and empathy.
@@ -98,7 +140,7 @@
               </div>
               <h3 class="feature-title">Strict Confidentiality</h3>
               <p class="feature-text">
-                Your medical files, diagnostic scans, and personal information are treated with the highest data protection standards and shared only with licensed clinical specialists.
+                Your medical files, diagnostic scans, and personal information are treated with high data protection standards and shared only with licensed clinical specialists.
               </p>
             </div>
           </div>
@@ -118,22 +160,23 @@
     </section>
 
     <!-- Consultation CTA -->
-    <section class="section bg-light-mint" style="text-align: center;">
+    <section class="section bg-light-tint" style="text-align: center;">
       <div class="container container-narrow">
-        <span class="section-tag gold">Get in Touch</span>
+        <span class="section-tag yellow">Get in Touch</span>
         <h2 style="margin-bottom: 1rem;">Experience the MEDMOST Difference</h2>
         <p style="margin-bottom: 2rem;">
           Let us help you explore world-class, affordable medical options in India with complete transparency.
         </p>
-        <button class="btn btn-primary btn-lg" onclick="openConsultationModal()">
+        <a href="consultation.html" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg">
           Request a Free Consultation
-        </button>
+        </a>
       </div>
     </section>
   </main>
 
   <div id="site-footer-container"></div>
 
+  <script src="js/translations.js"></script>
   <script src="js/components.js"></script>
   <script src="js/main.js"></script>
   <script>

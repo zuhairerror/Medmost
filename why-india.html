@@ -23,7 +23,7 @@
       font-size: 0.95rem;
     }
     .comparison-table th {
-      background-color: var(--color-forest-900);
+      background-color: var(--color-turquoise-950);
       color: #FFFFFF;
       padding: 1.1rem 1.4rem;
       font-weight: 600;
@@ -37,14 +37,15 @@
       border-bottom: none;
     }
     .comparison-table tr:hover td {
-      background-color: var(--color-forest-50);
+      background-color: var(--color-turquoise-50);
     }
     .price-india {
-      color: var(--color-forest-700);
+      color: var(--color-turquoise-700);
       font-weight: 700;
-      background: #EBF7F1;
+      background: var(--color-turquoise-50);
       padding: 0.25rem 0.6rem;
       border-radius: var(--radius-sm);
+      border: 1px solid var(--color-turquoise-200);
     }
   </style>
 </head>
@@ -57,7 +58,8 @@
     <section class="page-banner">
       <div class="container">
         <div class="breadcrumb">
-          <a href="index.html">Home</a> &nbsp;/&nbsp; <span>Why India?</span>
+          <a href="index.html" target="_blank" rel="noopener noreferrer" data-i18n="nav_home">Home</a> &nbsp;/&nbsp; 
+          <span data-i18n="nav_why_india">Why India?</span>
         </div>
         <h1>Why Choose India for Medical Treatment?</h1>
         <p>
@@ -70,7 +72,7 @@
     <section class="section">
       <div class="container">
         <div class="section-header">
-          <div class="section-tag gold">Global Benchmark</div>
+          <div class="section-tag yellow">Global Healthcare Destination</div>
           <h2 class="section-title">The India Healthcare Advantage</h2>
           <p class="section-desc">
             Over 500,000 international patients travel to India each year seeking complex surgeries and life-saving treatments.
@@ -94,7 +96,7 @@
             </div>
             <h3 class="feature-title">Immediate Care (Zero Waiting)</h3>
             <p class="feature-text">
-              Unlike public healthcare systems with lengthy queues for bypass surgery or joint replacements, procedures in India are scheduled promptly upon patient arrival.
+              Unlike public healthcare systems with lengthy waiting lists for bypass surgery or joint replacements, procedures in India are scheduled promptly upon patient arrival.
             </p>
           </div>
 
@@ -102,9 +104,9 @@
             <div class="feature-icon-box">
               <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
             </div>
-            <h3 class="feature-title">JCI & NABH Accreditations</h3>
+            <h3 class="feature-title">JCI & NABH Standards</h3>
             <p class="feature-text">
-              Dozens of Indian hospitals possess Joint Commission International (USA) accreditation and national NABH certification, upholding rigorous infection control.
+              Numerous Indian hospitals possess Joint Commission International (USA) accreditation and national NABH certification, upholding rigorous infection control protocols.
             </p>
           </div>
 
@@ -122,9 +124,9 @@
             <div class="feature-icon-box">
               <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
             </div>
-            <h3 class="feature-title">Western Trained Specialists</h3>
+            <h3 class="feature-title">Internationally Trained Specialists</h3>
             <p class="feature-text">
-              A large percentage of chief surgeons and senior consultants have completed fellowships and practicing residencies in the United Kingdom, USA, or Germany.
+              Chief surgeons and senior consultants frequently possess fellowships and clinical experience from the United Kingdom, USA, Germany, or other Western centers.
             </p>
           </div>
 
@@ -132,7 +134,7 @@
             <div class="feature-icon-box">
               <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
             </div>
-            <h3 class="feature-title">Warm Hospitality & Care</h3>
+            <h3 class="feature-title">Warm Hospitality & Support</h3>
             <p class="feature-text">
               Indian healthcare culture emphasizes empathetic, patient-centric bedside care. Hospitals feature dedicated international patient lounges and multi-cuisine catering.
             </p>
@@ -142,8 +144,8 @@
         <!-- Comparative Cost Analysis Table -->
         <div style="margin-top: 5rem;">
           <div class="section-header" style="margin-bottom: 1.5rem;">
-            <div class="section-tag gold">Comparative Estimates</div>
-            <h3 style="font-size: 1.8rem;" class="text-forest">Representative Procedure Cost Comparison</h3>
+            <div class="section-tag yellow">Cost Comparison</div>
+            <h3 style="font-size: 1.8rem;" class="text-turquoise">Representative Procedure Cost Comparison</h3>
             <p class="section-desc">
               Typical illustrative costs across international destinations (USD estimates for general reference).
             </p>
@@ -210,114 +212,27 @@
             * Disclaimer: Cost ranges are indicative benchmarks for educational comparison. Actual clinical costs vary depending on patient comorbidities, room type selection, doctor fees, and specific hospital package.
           </p>
         </div>
-
-        <!-- Major Healthcare Destination Cities Breakdown -->
-        <div style="margin-top: 5rem;">
-          <div class="section-header">
-            <div class="section-tag">Key Destinations</div>
-            <h2 class="section-title">Major Healthcare Cities in India</h2>
-            <p class="section-desc">
-              Explore the five premier metropolitan hubs chosen by international medical travelers.
-            </p>
-          </div>
-
-          <div style="display: flex; flex-direction: column; gap: 2rem;">
-            <!-- Delhi NCR -->
-            <div id="delhi" style="background:#FFFFFF; border:1px solid var(--color-border); border-radius:var(--radius-lg); padding:2rem; display:grid; grid-template-columns:1fr 2fr; gap:2rem; align-items:center;">
-              <img src="assets/images/hospitals-india.jpg" alt="Delhi NCR Healthcare" style="border-radius:var(--radius-md); height:200px; width:100%; object-fit:cover;" />
-              <div>
-                <span class="section-tag gold" style="font-size:0.75rem; margin-bottom:0.4rem;">North India Hub</span>
-                <h3 class="text-forest" style="margin-bottom:0.5rem;">Delhi NCR (New Delhi, Gurugram, Noida)</h3>
-                <p style="font-size:0.95rem; color:var(--color-text-muted); line-height:1.6; margin-bottom:1rem;">
-                  The premier quaternary healthcare cluster in Asia. Houses mammoth medical cities with over 1,000 beds each, dedicated international wings, direct flight connectivity from across the globe via Indira Gandhi International Airport (DEL).
-                </p>
-                <div style="font-size:0.85rem; color:var(--color-forest-800);">
-                  <strong>Top Specialties:</strong> Adult & Pediatric Cardiac Surgery, Robotic Oncology, Bone Marrow Transplants, Robotic Joint Reconstruction.
-                </div>
-              </div>
-            </div>
-
-            <!-- Mumbai -->
-            <div id="mumbai" style="background:#FFFFFF; border:1px solid var(--color-border); border-radius:var(--radius-lg); padding:2rem; display:grid; grid-template-columns:1fr 2fr; gap:2rem; align-items:center;">
-              <img src="assets/images/hero.jpg" alt="Mumbai Healthcare" style="border-radius:var(--radius-md); height:200px; width:100%; object-fit:cover;" />
-              <div>
-                <span class="section-tag gold" style="font-size:0.75rem; margin-bottom:0.4rem;">West India Hub</span>
-                <h3 class="text-forest" style="margin-bottom:0.5rem;">Mumbai (Financial & Quaternary Capital)</h3>
-                <p style="font-size:0.95rem; color:var(--color-text-muted); line-height:1.6; margin-bottom:1rem;">
-                  Celebrated for world-renowned oncologists, precision radiation therapy, and minimally invasive surgeries. Features premier institutions with sea-facing recovery rooms and immediate proximity to Chhatrapati Shivaji Maharaj International Airport (BOM).
-                </p>
-                <div style="font-size:0.85rem; color:var(--color-forest-800);">
-                  <strong>Top Specialties:</strong> Surgical Oncology, Complex Neurosurgery, Robotic Urological Surgery, Bariatric & Metabolic Interventions.
-                </div>
-              </div>
-            </div>
-
-            <!-- Chennai -->
-            <div id="chennai" style="background:#FFFFFF; border:1px solid var(--color-border); border-radius:var(--radius-lg); padding:2rem; display:grid; grid-template-columns:1fr 2fr; gap:2rem; align-items:center;">
-              <img src="assets/images/hospitals-india.jpg" alt="Chennai Healthcare" style="border-radius:var(--radius-md); height:200px; width:100%; object-fit:cover;" />
-              <div>
-                <span class="section-tag gold" style="font-size:0.75rem; margin-bottom:0.4rem;">South India Hub</span>
-                <h3 class="text-forest" style="margin-bottom:0.5rem;">Chennai (India's Health Capital)</h3>
-                <p style="font-size:0.95rem; color:var(--color-text-muted); line-height:1.6; margin-bottom:1rem;">
-                  Handles over 40% of international medical arrivals to India. World-renowned for organ transplantation records, specialized cardiology clinics, eye care institutes, and affordable accommodation for accompanying family members.
-                </p>
-                <div style="font-size:0.85rem; color:var(--color-forest-800);">
-                  <strong>Top Specialties:</strong> Heart & Lung Transplants, Ophthalmology, Kidney Transplants, Orthopaedic Spine Surgery.
-                </div>
-              </div>
-            </div>
-
-            <!-- Bengaluru -->
-            <div id="bengaluru" style="background:#FFFFFF; border:1px solid var(--color-border); border-radius:var(--radius-lg); padding:2rem; display:grid; grid-template-columns:1fr 2fr; gap:2rem; align-items:center;">
-              <img src="assets/images/consultation.jpg" alt="Bengaluru Healthcare" style="border-radius:var(--radius-md); height:200px; width:100%; object-fit:cover;" />
-              <div>
-                <span class="section-tag gold" style="font-size:0.75rem; margin-bottom:0.4rem;">Innovation Hub</span>
-                <h3 class="text-forest" style="margin-bottom:0.5rem;">Bengaluru (Medical Technology & Silicon Valley)</h3>
-                <p style="font-size:0.95rem; color:var(--color-text-muted); line-height:1.6; margin-bottom:1rem;">
-                  Pioneered high-volume cardiac surgery under Dr. Devi Shetty's health city model. Known for cutting-edge AI-assisted diagnostics, pleasant year-round climate for recovery, and high density of English-speaking staff.
-                </p>
-                <div style="font-size:0.85rem; color:var(--color-forest-800);">
-                  <strong>Top Specialties:</strong> Cardiac Surgery, Robotic Joint Replacement, Comprehensive Neuro-Rehabilitation, Fertility & Genetics.
-                </div>
-              </div>
-            </div>
-
-            <!-- Hyderabad -->
-            <div id="hyderabad" style="background:#FFFFFF; border:1px solid var(--color-border); border-radius:var(--radius-lg); padding:2rem; display:grid; grid-template-columns:1fr 2fr; gap:2rem; align-items:center;">
-              <img src="assets/images/hospitals-india.jpg" alt="Hyderabad Healthcare" style="border-radius:var(--radius-md); height:200px; width:100%; object-fit:cover;" />
-              <div>
-                <span class="section-tag gold" style="font-size:0.75rem; margin-bottom:0.4rem;">Deccan Hub</span>
-                <h3 class="text-forest" style="margin-bottom:0.5rem;">Hyderabad (Gastroenterology & Transplants)</h3>
-                <p style="font-size:0.95rem; color:var(--color-text-muted); line-height:1.6; margin-bottom:1rem;">
-                  A globally recognized hub for therapeutic endoscopy, hepatology, and living-donor liver transplants. Offers state-of-the-art infrastructure at exceptionally economical living and treatment expenses.
-                </p>
-                <div style="font-size:0.85rem; color:var(--color-forest-800);">
-                  <strong>Top Specialties:</strong> Therapeutic Endoscopy, Living Donor Liver Transplants, Nephrology, Urology & Robotic Prostate Surgery.
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
 
     <!-- Consultation CTA -->
-    <section class="section bg-light-mint" style="text-align: center;">
+    <section class="section bg-light-tint" style="text-align: center;">
       <div class="container container-narrow">
-        <span class="section-tag gold">Start Your Journey</span>
+        <span class="section-tag yellow">Start Your Journey</span>
         <h2 style="margin-bottom: 1rem;">Explore How Much You Can Save</h2>
         <p style="margin-bottom: 2rem;">
           Get a personalized preliminary evaluation comparing top hospital choices in India for your diagnosis.
         </p>
-        <button class="btn btn-primary btn-lg" onclick="openConsultationModal()">
+        <a href="consultation.html" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg">
           Request Free Comparative Estimate
-        </button>
+        </a>
       </div>
     </section>
   </main>
 
   <div id="site-footer-container"></div>
 
+  <script src="js/translations.js"></script>
   <script src="js/components.js"></script>
   <script src="js/main.js"></script>
   <script>

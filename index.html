@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MEDMOST | World-Class Medical Treatment in India - International Patient Facilitation</title>
-  <meta name="description" content="MEDMOST connects international patients with premier accredited hospitals and specialist doctors in India. Expert coordination for cardiac, oncology, orthopaedics, and major treatments." />
+  <title>MEDMOST | Your Trusted Partner for Medical Treatment in India</title>
+  <meta name="description" content="MEDMOST connects international patients with accredited hospitals and doctors in India. Expert medical travel coordination for cardiac, oncology, orthopaedics, and major treatments." />
   <link rel="stylesheet" href="css/style.css" />
   <link rel="icon" type="image/svg+xml" href="assets/images/logo.svg" />
 </head>
 <body>
 
-  <!-- Dynamic Header & Navigation -->
+  <!-- Dynamic Header with Language Selector & Target="_blank" navigation -->
   <div id="site-header-container"></div>
 
   <main>
@@ -21,39 +21,39 @@
         <div class="hero-content">
           <div class="hero-badge">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
-            International Patient Healthcare Partner
+            <span data-i18n="hero_badge">International Patient Healthcare Partner</span>
           </div>
           <h1 class="hero-title">
-            World-Class Medical <br />
-            <span>Treatment in India</span>
+            <span data-i18n="hero_title">Your Trusted Partner for</span><br />
+            <span data-i18n="hero_title_highlight">Medical Treatment in India</span>
           </h1>
-          <p class="hero-desc">
-            Your trusted partner for exploring quality medical treatment in India. We help international patients connect with healthcare providers and coordinate their medical journey.
+          <p class="hero-desc" data-i18n="hero_desc">
+            We help international patients explore quality treatment options in India, connect with healthcare providers, and coordinate every step of their medical journey.
           </p>
           <div class="hero-actions">
-            <a href="treatments.html" class="btn btn-gold btn-lg">
+            <a href="treatments.html" target="_blank" rel="noopener noreferrer" class="btn btn-yellow btn-lg">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-              Explore Treatments
+              <span data-i18n="btn_explore_treatments">Explore Treatments</span>
             </a>
-            <button type="button" class="btn btn-outline-white btn-lg" onclick="openConsultationModal()">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-              Get a Consultation
-            </button>
+            <a href="doctor-sharik-khan.html" target="_blank" rel="noopener noreferrer" class="btn btn-outline-white btn-lg">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              <span data-i18n="btn_meet_doctor">Meet Our Doctor</span>
+            </a>
           </div>
 
           <!-- Trust Badges -->
           <div class="hero-trust-bar">
             <div class="trust-item">
               <span class="trust-number">500+</span>
-              <span class="trust-label">Advanced Procedures Coordinated</span>
+              <span class="trust-label" data-i18n="hero_stat_procedures">Procedures Coordinated</span>
             </div>
             <div class="trust-item">
-              <span class="trust-number">70%</span>
-              <span class="trust-label">Average Cost Savings vs Western Care</span>
+              <span class="trust-number">60-80%</span>
+              <span class="trust-label" data-i18n="hero_stat_savings">Cost Savings vs Western Care</span>
             </div>
             <div class="trust-item">
               <span class="trust-number">JCI / NABH</span>
-              <span class="trust-label">Focus on Premier Accredited Hospitals</span>
+              <span class="trust-label" data-i18n="hero_stat_accredited">Accredited Centers (Demo)</span>
             </div>
           </div>
         </div>
@@ -61,42 +61,42 @@
         <!-- Hero Quick Enquiry Card -->
         <div class="hero-card">
           <div class="hero-card-header">
-            <div class="section-tag gold" style="font-size:0.75rem; padding:0.25rem 0.8rem; margin-bottom:0.4rem;">
+            <div class="section-tag yellow" style="font-size:0.75rem; padding:0.25rem 0.8rem; margin-bottom:0.4rem;">
               Instant Enquiry
             </div>
-            <h3 class="hero-card-title">Request Treatment Estimate</h3>
-            <p class="hero-card-subtitle">Receive hospital options and preliminary guidance without obligation.</p>
+            <h3 class="hero-card-title" data-i18n="hero_quick_title">Request Treatment Estimate</h3>
+            <p class="hero-card-subtitle" data-i18n="hero_quick_subtitle">Receive hospital options and preliminary guidance without obligation.</p>
           </div>
           <form id="hero-quick-form" onsubmit="handleDemoFormSubmit(event, 'hero')">
             <div class="form-group">
-              <label class="form-label" for="hero-name">Patient Name *</label>
+              <label class="form-label" for="hero-name" data-i18n="form_fullname">Patient Name *</label>
               <input type="text" id="hero-name" class="form-control" placeholder="Your full name" required />
             </div>
             <div class="form-group">
-              <label class="form-label" for="hero-phone">WhatsApp / Phone *</label>
+              <label class="form-label" for="hero-phone" data-i18n="form_phone">WhatsApp / Phone *</label>
               <input type="tel" id="hero-phone" class="form-control" placeholder="e.g. +7 999 000 0000" required />
             </div>
             <div class="form-group">
-              <label class="form-label" for="hero-treatment">Required Treatment *</label>
+              <label class="form-label" for="hero-treatment" data-i18n="form_treatment">Required Treatment *</label>
               <select id="hero-treatment" class="form-control" required>
                 <option value="">Select Specialty...</option>
-                <option value="cardiology">Cardiology & Heart Surgery</option>
-                <option value="oncology">Oncology & Cancer Care</option>
-                <option value="orthopaedics">Orthopaedics & Joint Replacement</option>
-                <option value="neurosurgery">Neurosurgery & Neurology</option>
+                <option value="cardiology">Cardiology and Heart Surgery</option>
+                <option value="oncology">Oncology and Cancer Care</option>
+                <option value="orthopaedics">Orthopaedics and Joint Replacement</option>
+                <option value="neurosurgery">Neurology and Neurosurgery</option>
                 <option value="gastroenterology">Gastroenterology</option>
-                <option value="urology">Urology & Kidney Care</option>
+                <option value="urology">Urology and Kidney Care</option>
                 <option value="transplant">Organ Transplantation</option>
                 <option value="other">Other Medical Speciality</option>
               </select>
             </div>
             <label class="form-checkbox-label">
               <input type="checkbox" required />
-              <span>I consent to MEDMOST contacting me regarding medical travel options. (Demo form: no real records stored).</span>
+              <span data-i18n="form_consent">I consent to MEDMOST contacting me regarding medical travel options. (Demo form: no real records stored).</span>
             </label>
             <div style="margin-top: 1.25rem;">
               <button type="submit" class="btn btn-primary" style="width: 100%;">
-                Get Free Treatment Plan Guidance
+                <span data-i18n="form_submit">Get Free Treatment Guidance</span>
               </button>
             </div>
           </form>
@@ -104,147 +104,86 @@
       </div>
     </section>
 
-    <!-- Business Card Reference & Sample Phone Alert Bar -->
-    <section class="card-reference-banner">
-      <div class="container card-ref-flex">
-        <div class="card-ref-info">
-          <div class="card-ref-icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="2" y1="20" x2="22" y2="20"/></svg>
+    <!-- Brief Introduction to MEDMOST -->
+    <section class="section" id="intro-section" style="background:#FFFFFF; border-bottom:1px solid var(--color-border);">
+      <div class="container">
+        <div style="display:grid; grid-template-columns:1.2fr 0.8fr; gap:3.5rem; align-items:center;">
+          <div>
+            <span class="section-tag" data-i18n="sec_why_subtitle">Patient Facilitation Services</span>
+            <h2 class="section-title">Dedicated to Excellence in International Healthcare Facilitation</h2>
+            <p style="font-size:1.05rem; line-height:1.75; color:var(--color-text-muted); margin-bottom:1.5rem;">
+              <strong>MEDMOST</strong> coordinates specialized medical travel for patients across Central Asia, the Middle East, Africa, and the West seeking advanced, affordable medical treatments in India.
+            </p>
+            <p style="font-size:0.95rem; line-height:1.7; color:var(--color-text-muted); margin-bottom:2rem;">
+              From evaluating clinical diagnostic scans and connecting with senior Indian hospital department chairs to managing Indian Medical Visas (M-Visa), airport transfers, and local lodging, our dedicated coordination team ensures peace of mind at every step.
+            </p>
+            <div style="display:flex; gap:1rem; flex-wrap:wrap;">
+              <a href="about.html" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                Read About MEDMOST &rarr;
+              </a>
+              <a href="patient-services.html" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+                Explore Patient Services &rarr;
+              </a>
+            </div>
           </div>
-          <div class="card-ref-details">
-            <h4>Sample Card Reference & Official Channels</h4>
-            <p>Direct communication channels for international travelers visiting India for medical care.</p>
+          <div>
+            <img src="assets/images/consultation.jpg" alt="Doctor consultation with international patients" style="border-radius:var(--radius-xl); box-shadow:var(--shadow-md); width:100%; object-fit:cover;" />
           </div>
         </div>
-        <div class="card-contacts-pills">
-          <span class="contact-pill">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-            Card Tel: +7 960 1726800999 <small style="color:var(--color-gold-300);">(Sample)</small>
-          </span>
-          <a href="https://wa.me/79601726800999" target="_blank" rel="noopener noreferrer" class="contact-pill gold">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
-            Chat on WhatsApp
+      </div>
+    </section>
+
+    <!-- Featured Doctor Profile Section (Dr. Sharik Khan & Dr. Salah) -->
+    <section class="section bg-light-tint" id="doctors-preview-section">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag yellow" data-i18n="sec_doctors_subtitle">Experienced Practitioners</div>
+          <h2 class="section-title" data-i18n="sec_doctors_title">Our Medical Advisory & Doctors</h2>
+          <p class="section-desc" data-i18n="sec_doctors_desc">
+            Meet our dedicated doctors committed to helping international patients access world-class clinical guidance.
+          </p>
+        </div>
+
+        <!-- Rendered Two Official Doctor Cards -->
+        <div class="doctors-preview-grid" id="home-doctors-grid"></div>
+
+        <div style="text-align:center; margin-top:3rem;">
+          <a href="doctors.html" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-lg">
+            View Complete Doctors Section &rarr;
           </a>
-          <button class="contact-pill" onclick="showQrDemo()">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
-            View Demo QR
-          </button>
         </div>
       </div>
     </section>
 
-    <!-- Why Choose MEDMOST -->
-    <section class="section" id="why-medmost">
+    <!-- Preview of Major Treatment Categories -->
+    <section class="section" id="treatments-preview-section">
       <div class="container">
         <div class="section-header">
-          <div class="section-tag">Patient Facilitation Services</div>
-          <h2 class="section-title">Why Choose MEDMOST?</h2>
-          <p class="section-desc">
-            Navigating medical care across borders requires dedicated coordination. We assist international patients with every facet of their clinical trip to India.
+          <div class="section-tag" data-i18n="sec_treatments_subtitle">Specialty Directory</div>
+          <h2 class="section-title" data-i18n="sec_treatments_title">Major Treatment Categories</h2>
+          <p class="section-desc" data-i18n="sec_treatments_desc">
+            Explore advanced medical and surgical procedures available through leading healthcare institutes in India.
           </p>
         </div>
 
-        <div class="features-grid">
-          <div class="feature-card">
-            <div class="feature-icon-box">
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M3 7v14M21 7v14M6 21V11M10 21V11M14 21V11M18 21V11"/><circle cx="12" cy="6" r="2"/></svg>
-            </div>
-            <h3 class="feature-title">Assistance Finding Hospitals</h3>
-            <p class="feature-text">
-              We help identify reputable, accredited Indian hospitals matching your specific medical condition, technology requirements, and budget parameters.
-            </p>
-          </div>
-
-          <div class="feature-card">
-            <div class="feature-icon-box">
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><polyline points="16 11 18 13 22 9"/></svg>
-            </div>
-            <h3 class="feature-title">Connecting with Doctors</h3>
-            <p class="feature-text">
-              We aim to coordinate opinions with senior consultants and surgical specialists across major tertiary hospitals before you travel.
-            </p>
-          </div>
-
-          <div class="feature-card">
-            <div class="feature-icon-box">
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-            </div>
-            <h3 class="feature-title">Appointment Coordination</h3>
-            <p class="feature-text">
-              Avoid long waiting queues. We arrange prioritized OPD appointments, diagnostic imaging slots, and admission schedules with clinical teams.
-            </p>
-          </div>
-
-          <div class="feature-card">
-            <div class="feature-icon-box">
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.3c.4-.2.6-.6.5-1.1z"/></svg>
-            </div>
-            <h3 class="feature-title">Travel & Accommodation Guidance</h3>
-            <p class="feature-text">
-              Guidance for patient and companion lodging within walking distance or brief transit from selected hospital centers in major Indian cities.
-            </p>
-          </div>
-
-          <div class="feature-card">
-            <div class="feature-icon-box">
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
-            </div>
-            <h3 class="feature-title">International Patient Support</h3>
-            <p class="feature-text">
-              Assistance with Indian Medical Visa (M-Visa) documentation from hospitals, airport pickup coordination, and local connectivity setup.
-            </p>
-          </div>
-
-          <div class="feature-card">
-            <div class="feature-icon-box">
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-            </div>
-            <h3 class="feature-title">Language & Communication</h3>
-            <p class="feature-text">
-              We facilitate language interpretation support (including Russian, Arabic, French, and other languages through hospital international desks) to ensure peace of mind.
-            </p>
-          </div>
-        </div>
-
-        <div class="notice-box">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
-          <p>
-            <strong>Transparent Service Scope:</strong> The above services represent the facilitation support MEDMOST aims to provide. All medical opinions, diagnoses, and treatments are carried out exclusively by accredited partner hospitals and licensed doctors in India. Services depend on case review and confirmed arrangements.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Main Treatment Categories Directory -->
-    <section class="section bg-light-mint" id="treatments-section">
-      <div class="container">
-        <div class="section-header">
-          <div class="section-tag gold">Treatment Directory</div>
-          <h2 class="section-title">Main Treatment Categories</h2>
-          <p class="section-desc">
-            Explore advanced medical and surgical procedures available through leading healthcare institutes in India, as highlighted in the MEDMOST specialty portfolio.
-          </p>
-        </div>
-
-        <!-- Treatment Cards Rendered Dynamically via main.js -->
         <div class="treatments-grid" id="home-treatments-grid"></div>
 
         <div style="text-align: center; margin-top: 3rem;">
-          <a href="treatments.html" class="btn btn-primary btn-lg">
-            View Detailed Treatments Directory &rarr;
+          <a href="treatments.html" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg">
+            <span data-i18n="btn_view_all_treatments">View All 12 Treatment Categories &rarr;</span>
           </a>
         </div>
       </div>
     </section>
 
-    <!-- How It Works (4-Step Timeline) -->
-    <section class="section" id="how-it-works">
+    <!-- How the Service Works -->
+    <section class="section bg-light-tint" id="how-it-works-preview">
       <div class="container">
         <div class="section-header">
-          <div class="section-tag">Step-by-Step Patient Journey</div>
-          <h2 class="section-title">How It Works</h2>
-          <p class="section-desc">
-            We streamline what can otherwise be a stressful process into four clear, organized steps from your home country to your recovery.
+          <div class="section-tag yellow" data-i18n="sec_how_subtitle">4-Step Patient Journey</div>
+          <h2 class="section-title" data-i18n="sec_how_title">How It Works</h2>
+          <p class="section-desc" data-i18n="sec_how_desc">
+            We streamline your healthcare journey from your home country to India and back into four simple steps.
           </p>
         </div>
 
@@ -252,12 +191,10 @@
           <div class="timeline-step">
             <div class="step-number">1</div>
             <div class="step-icon-wrap">
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
             </div>
-            <h3 class="step-title">Choose Your Treatment</h3>
-            <p class="step-desc">
-              Browse our treatment directory or specify your diagnosis and medical needs based on your local physician's advice.
-            </p>
+            <h3 class="step-title" data-i18n="step1_title">1. Choose Your Treatment</h3>
+            <p class="step-desc" data-i18n="step1_desc">Submit your diagnosis and current medical reports for preliminary case review.</p>
           </div>
 
           <div class="timeline-step">
@@ -265,21 +202,17 @@
             <div class="step-icon-wrap">
               <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
             </div>
-            <h3 class="step-title">Send Enquiry & Details</h3>
-            <p class="step-desc">
-              Submit your basic contact details and current medical reports so appropriate specialist opinions can be explored.
-            </p>
+            <h3 class="step-title" data-i18n="step2_title">2. Receive Doctor Opinions</h3>
+            <p class="step-desc" data-i18n="step2_desc">Get preliminary clinical opinions, estimated costs, and recommended hospital options.</p>
           </div>
 
           <div class="timeline-step">
             <div class="step-number">3</div>
             <div class="step-icon-wrap">
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
             </div>
-            <h3 class="step-title">Get Connected</h3>
-            <p class="step-desc">
-              Receive preliminary doctor opinions, tentative procedure plans, estimated hospital stay durations, and package quotes.
-            </p>
+            <h3 class="step-title" data-i18n="step3_title">3. Visa & Travel Coordination</h3>
+            <p class="step-desc" data-i18n="step3_desc">Receive assistance with hospital Visa Invitation Letters (VIL) and travel guidance.</p>
           </div>
 
           <div class="timeline-step">
@@ -287,406 +220,103 @@
             <div class="step-icon-wrap">
               <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
             </div>
-            <h3 class="step-title">Travel & Care Planning</h3>
-            <p class="step-desc">
-              Receive assistance with Medical Visa invitation letters, appointment scheduling, airport transfers, and local stay coordination where available.
-            </p>
+            <h3 class="step-title" data-i18n="step4_title">4. Hospital Care & Follow-Up</h3>
+            <p class="step-desc" data-i18n="step4_desc">Receive coordinated hospital admission, language support, and post-discharge follow-up.</p>
           </div>
         </div>
 
         <div style="text-align: center; margin-top: 2.5rem;">
-          <a href="how-it-works.html" class="btn btn-outline">
-            Read In-Depth Patient Roadmap & Visa Guidelines &rarr;
+          <a href="how-it-works.html" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+            Read Comprehensive 4-Step Patient Guide &rarr;
           </a>
         </div>
       </div>
     </section>
 
-    <!-- Doctors & Hospitals Showcase (Demo Profiles) -->
-    <section class="section bg-light-mint" id="doctors-hospitals-section">
+    <!-- International Patient Support Services Preview -->
+    <section class="section" id="patient-services-preview">
       <div class="container">
         <div class="section-header">
-          <div class="section-tag gold">Medical Network Preview</div>
-          <h2 class="section-title">Specialist Doctors & Premier Hospitals</h2>
-          <p class="section-desc">
-            Explore sample profiles of Indian medical specialists and quaternary hospitals. All profiles shown in this preview are clearly marked as <strong>Demo Profiles</strong> for review.
+          <div class="section-tag" data-i18n="sec_services_subtitle">Comprehensive Care</div>
+          <h2 class="section-title" data-i18n="sec_services_title">International Patient Services</h2>
+          <p class="section-desc" data-i18n="sec_services_desc">
+            We assist with hospital coordination, travel planning, airport reception, accommodation guidance, and language translation.
           </p>
         </div>
 
-        <div style="margin-bottom: 2.5rem;">
-          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1.5rem; flex-wrap:wrap; gap:1rem;">
-            <h3 style="font-size:1.4rem;" class="text-forest">Featured Specialist Doctors (Demo)</h3>
-            <a href="doctors.html" class="btn btn-sm btn-outline">View All Doctor Profiles &rarr;</a>
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon-box">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            </div>
+            <h3 class="feature-title">Appointment Coordination</h3>
+            <p class="feature-text">Prioritized consultations with departmental chairs to avoid delays upon hospital arrival.</p>
           </div>
-          <div class="card-grid-3" id="home-doctors-grid"></div>
+
+          <div class="feature-card">
+            <div class="feature-icon-box">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+            </div>
+            <h3 class="feature-title">Medical Visa (M-Visa) Guidance</h3>
+            <p class="feature-text">Procuring official hospital Visa Invitation Letters required for patient and attendants.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon-box">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1 .4-1 1v7c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><path d="M9 17h6"/><circle cx="17" cy="17" r="2"/></svg>
+            </div>
+            <h3 class="feature-title">Airport Pickup Coordination</h3>
+            <p class="feature-text">Hassle-free transfers from Delhi, Mumbai, Chennai, Bengaluru, or Hyderabad airports.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon-box">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            </div>
+            <h3 class="feature-title">Accommodation Guidance</h3>
+            <p class="feature-text">Assistance finding clean hotels or serviced apartments within walking distance of the hospital.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon-box">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            </div>
+            <h3 class="feature-title">Language & Translation Support</h3>
+            <p class="feature-text">Dedicated language interpreters for Russian, Arabic, French, and other languages during clinical visits.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon-box">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            </div>
+            <h3 class="feature-title">Post-Discharge Follow-Up</h3>
+            <p class="feature-text">Facilitating virtual follow-up conferences with your Indian doctor after you return home.</p>
+          </div>
         </div>
 
-        <div style="margin-top: 4rem;">
-          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1.5rem; flex-wrap:wrap; gap:1rem;">
-            <h3 style="font-size:1.4rem;" class="text-forest">Quaternary Care Hospital Hubs (Demo)</h3>
-            <a href="hospitals.html" class="btn btn-sm btn-outline">View All Hospital Hubs &rarr;</a>
-          </div>
-          <div class="card-grid-3" id="home-hospitals-grid"></div>
+        <div style="text-align:center; margin-top:2.5rem;">
+          <a href="patient-services.html" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+            Explore Dedicated Patient Services Page &rarr;
+          </a>
         </div>
       </div>
     </section>
 
-    <!-- International Patient Support Services -->
-    <section class="section" id="patient-support-section">
-      <div class="container">
-        <div class="section-header">
-          <div class="section-tag">End-to-End Care</div>
-          <h2 class="section-title">International Patient Support</h2>
-          <p class="section-desc">
-            We understand traveling overseas for medical treatment is a major decision. MEDMOST facilitates dedicated logistical support to keep you comfortable.
-          </p>
-        </div>
-
-        <div class="support-grid">
-          <div class="support-item">
-            <div class="support-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-            </div>
-            <div class="support-content">
-              <h4>Medical Appointment Coordination</h4>
-              <p>Arranging scheduled slots with specialist heads to avoid delays and unnecessary hospital waiting times upon arrival.</p>
-            </div>
-          </div>
-
-          <div class="support-item">
-            <div class="support-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><circle cx="10" cy="14" r="2"/></svg>
-            </div>
-            <div class="support-content">
-              <h4>Visa-Document Guidance</h4>
-              <p>Facilitating official hospital Visa Invitation Letters (VIL) required for Indian Medical Visas (M-Visa) for patient and attendants.</p>
-            </div>
-          </div>
-
-          <div class="support-item">
-            <div class="support-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1 .4-1 1v7c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><path d="M9 17h6"/><circle cx="17" cy="17" r="2"/></svg>
-            </div>
-            <div class="support-content">
-              <h4>Airport Pickup Coordination</h4>
-              <p>Arranging safe, hassle-free airport transfers upon arrival in Delhi, Mumbai, Chennai, Bengaluru, or Hyderabad directly to hotel or hospital.</p>
-            </div>
-          </div>
-
-          <div class="support-item">
-            <div class="support-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-            </div>
-            <div class="support-content">
-              <h4>Accommodation Guidance</h4>
-              <p>Helping patients and their companions find clean, hygienic guest houses, serviced apartments, or hotels situated close to the hospital.</p>
-            </div>
-          </div>
-
-          <div class="support-item">
-            <div class="support-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-            </div>
-            <div class="support-content">
-              <h4>Translation & Language Assistance</h4>
-              <p>Dedicated coordination for language assistance (Russian, Arabic, French, etc.) so that all medical consultations are clearly understood.</p>
-            </div>
-          </div>
-
-          <div class="support-item">
-            <div class="support-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-            </div>
-            <div class="support-content">
-              <h4>Follow-up Appointment Coordination</h4>
-              <p>Assistance in scheduling post-treatment reviews and virtual follow-ups with your Indian doctor after you return home.</p>
-            </div>
-          </div>
-        </div>
-
-        <p style="text-align: center; font-size: 0.85rem; color: var(--color-text-muted); margin-top: 2rem;">
-          * Note: Actual support arrangements are subject to availability and confirmed hospital agreements for each traveling patient.
+    <!-- Consultation Call-to-Action Section -->
+    <section class="section bg-light-tint" id="cta-section">
+      <div class="container container-narrow" style="text-align: center;">
+        <span class="section-tag yellow">Get in Touch</span>
+        <h2 style="margin-bottom: 1rem;">Ready to Explore Treatment Options in India?</h2>
+        <p style="font-size:1.05rem; margin-bottom: 2rem;">
+          Our international patient advisors are ready to review your case, provide hospital comparisons, and guide your journey with complete transparency.
         </p>
-      </div>
-    </section>
-
-    <!-- India Healthcare Destinations (Cities) -->
-    <section class="section bg-forest" id="destinations-section">
-      <div class="container">
-        <div class="section-header">
-          <div class="section-tag gold">Healthcare Hubs</div>
-          <h2 class="section-title text-white">India Healthcare Destinations</h2>
-          <p class="section-desc" style="color: #C1DDD2;">
-            Discover India's renowned medical travel cities, equipped with international airports, globally accredited medical institutes, and advanced robotic facilities.
-          </p>
-        </div>
-
-        <div class="cities-grid" id="home-cities-grid"></div>
-
-        <p style="text-align:center; font-size:0.8rem; color:#8EB5A3; margin-top:2rem;">
-          * Destinational overviews are educational. Partner facilities in each metropolitan city are confirmed based on patient requirement and hospital confirmation.
-        </p>
-      </div>
-    </section>
-
-    <!-- Patient Enquiry Form Section -->
-    <section class="section" id="consultation-section">
-      <div class="container container-narrow">
-        <div class="consultation-wrap">
-          <div class="consultation-grid">
-            <div class="consultation-sidebar">
-              <div>
-                <span class="section-tag gold" style="font-size:0.75rem;">Confidential Enquiry</span>
-                <h3 class="consult-side-title">Speak with a Medical Coordinator</h3>
-                <p class="consult-side-desc">
-                  Tell us about your medical needs. Our team will review your enquiry and provide options from accredited Indian healthcare centers.
-                </p>
-
-                <ul class="consult-benefits-list">
-                  <li class="consult-benefit-item">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-                    <span>Free preliminary case assessment guidance</span>
-                  </li>
-                  <li class="consult-benefit-item">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-                    <span>Transparent treatment duration & cost ranges</span>
-                  </li>
-                  <li class="consult-benefit-item">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-                    <span>Full Medical Visa (M-Visa) documentation support</span>
-                  </li>
-                </ul>
-              </div>
-
-              <div class="consult-card-reference">
-                <h5>Business Card Contact:</h5>
-                <p>Tel: <strong>+7 960 1726800999</strong> <small style="color:var(--color-gold-300);">(Sample)</small></p>
-                <p style="margin-top:0.3rem;"><a href="https://wa.me/79601726800999" target="_blank" rel="noopener noreferrer" style="color:#A7F3D0; font-weight:600;">&bull; Direct WhatsApp Chat Available</a></p>
-              </div>
-            </div>
-
-            <!-- Form Pane -->
-            <div class="consultation-form-pane">
-              <h3 style="font-size:1.35rem; margin-bottom:0.4rem;" class="text-forest">Patient Enquiry Form</h3>
-              <p style="font-size:0.875rem; color:var(--color-text-muted); margin-bottom:1.5rem;">
-                First Version Demo Form &bull; No real patient health records are collected or saved.
-              </p>
-
-              <form id="home-main-consult-form" onsubmit="handleDemoFormSubmit(event, 'main')">
-                <div class="form-group">
-                  <label class="form-label" for="full-name">Full Name *</label>
-                  <input type="text" id="full-name" class="form-control" placeholder="e.g. Dmitry Ivanov" required />
-                </div>
-
-                <div class="form-row">
-                  <div class="form-group">
-                    <label class="form-label" for="country">Country of Residence *</label>
-                    <input type="text" id="country" class="form-control" placeholder="e.g. Russia, UAE, Kenya" required />
-                  </div>
-                  <div class="form-group">
-                    <label class="form-label" for="phone">WhatsApp or Phone *</label>
-                    <input type="tel" id="phone" class="form-control" placeholder="e.g. +7 960 123 4567" required />
-                  </div>
-                </div>
-
-                <div class="form-group">
-                  <label class="form-label" for="email">Email Address *</label>
-                  <input type="email" id="email" class="form-control" placeholder="e.g. patient@mail.com" required />
-                </div>
-
-                <div class="form-row">
-                  <div class="form-group">
-                    <label class="form-label" for="pref-treatment">Preferred Treatment *</label>
-                    <select id="pref-treatment" class="form-control" required>
-                      <option value="">Select Treatment...</option>
-                      <option value="cardiology">Cardiology & Heart Surgery</option>
-                      <option value="oncology">Oncology & Cancer Care</option>
-                      <option value="orthopaedics">Orthopaedics & Joint Replacement</option>
-                      <option value="neurosurgery">Neurosurgery & Neurology</option>
-                      <option value="gastroenterology">Gastroenterology</option>
-                      <option value="urology">Urology</option>
-                      <option value="nephrology">Nephrology & Kidney Care</option>
-                      <option value="ophthalmology">Ophthalmology & Eye Care</option>
-                      <option value="dental">Dental Treatment</option>
-                      <option value="plastic-surgery">Plastic & Cosmetic Surgery</option>
-                      <option value="fertility">Fertility Treatment (IVF)</option>
-                      <option value="transplant">Organ Transplantation</option>
-                      <option value="other">Other Speciality</option>
-                    </select>
-                  </div>
-                  <div class="form-group">
-                    <label class="form-label" for="pref-city">Preferred City (Optional)</label>
-                    <select id="pref-city" class="form-control">
-                      <option value="">Any Suitable Hub</option>
-                      <option value="delhi">Delhi NCR</option>
-                      <option value="mumbai">Mumbai</option>
-                      <option value="chennai">Chennai</option>
-                      <option value="bengaluru">Bengaluru</option>
-                      <option value="hyderabad">Hyderabad</option>
-                    </select>
-                  </div>
-                </div>
-
-                <div class="form-group">
-                  <label class="form-label" for="short-msg">Short Message or Medical Condition</label>
-                  <textarea id="short-msg" class="form-control" rows="3" placeholder="Briefly describe your symptoms, diagnosis, or doctors' notes..."></textarea>
-                </div>
-
-                <label class="form-checkbox-label">
-                  <input type="checkbox" required />
-                  <span>I understand that MEDMOST is a medical travel facilitator and that this demo form does not store real medical information.</span>
-                </label>
-
-                <div style="margin-top: 1.5rem;">
-                  <button type="submit" class="btn btn-primary" style="width: 100%;">
-                    Submit Consultation Enquiry
-                  </button>
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- FAQ Section -->
-    <section class="section bg-light-mint" id="faq-section">
-      <div class="container container-narrow">
-        <div class="section-header">
-          <div class="section-tag gold">Frequently Asked Questions</div>
-          <h2 class="section-title">Common Patient Enquiries</h2>
-          <p class="section-desc">
-            Honest, transparent answers about medical travel to India and MEDMOST's facilitation services.
-          </p>
-        </div>
-
-        <div class="faq-list">
-          <div class="faq-item active">
-            <button class="faq-question">
-              <span>Why do international patients explore medical treatment in India?</span>
-              <div class="faq-icon">&darr;</div>
-            </button>
-            <div class="faq-answer">
-              India has become one of the world's foremost medical travel destinations due to its vast network of JCI and NABH accredited quaternary hospitals, internationally trained English-speaking surgeons, advanced robotic surgical systems, and costs that are typically 60% to 80% lower than in the US, Europe, or the Middle East.
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-question">
-              <span>How can I request a consultation through MEDMOST?</span>
-              <div class="faq-icon">&darr;</div>
-            </button>
-            <div class="faq-answer">
-              You can simply complete our online consultation form or reach out via WhatsApp with your diagnosis and current medical reports. Our team coordinates with specialist medical teams in India to obtain preliminary clinical opinions and cost estimates.
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-question">
-              <span>Can MEDMOST help me find a suitable hospital and doctor?</span>
-              <div class="faq-icon">&darr;</div>
-            </button>
-            <div class="faq-answer">
-              Yes. As an independent medical travel coordinator, MEDMOST helps guide patients to hospitals and doctors matching their specific condition, preferences, and budget, providing comparative options across major Indian healthcare hubs.
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-question">
-              <span>Can assistance with travel and accommodation be arranged?</span>
-              <div class="faq-icon">&darr;</div>
-            </button>
-            <div class="faq-answer">
-              Where available, we provide assistance with Medical Visa invitation letters (VIL) directly issued by hospitals, airport pickup coordination, and recommendations for vetted hotels or serviced apartments within walking distance of the hospital.
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-question">
-              <span>What information should I provide in my first enquiry?</span>
-              <div class="faq-icon">&darr;</div>
-            </button>
-            <div class="faq-answer">
-              To obtain an accurate preliminary medical review, it is recommended to provide your current diagnosis, a summary of recent symptoms, recent lab results, and relevant imaging reports (such as MRI, CT scan, or echocardiogram).
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-question">
-              <span>Does MEDMOST guarantee treatment outcomes?</span>
-              <div class="faq-icon">&darr;</div>
-            </button>
-            <div class="faq-answer">
-              No. MEDMOST is a medical travel facilitator, not a medical clinic or treatment provider. No ethical medical organization can guarantee surgical or clinical outcomes. All medical decisions, evaluations, surgical risks, and care plans are solely determined between the patient and the licensed medical professionals at the treating hospital.
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Business Card Showcase Box -->
-    <section class="section" id="business-card-showcase">
-      <div class="container">
-        <div class="card-showcase-box">
-          <div class="card-showcase-grid">
-            <div>
-              <span class="section-tag gold" style="margin-bottom:0.8rem;">Official Card Reference</span>
-              <h2 style="color:#FFFFFF; margin-bottom:1rem;">MEDMOST Brand & Contact Credentials</h2>
-              <p style="color:#D2E4DC; line-height:1.7; margin-bottom:1.5rem;">
-                Based on the MEDMOST business card design reference: dedicated to bridging world-class medical expertise in India with international travelers worldwide.
-              </p>
-              <div style="display:flex; flex-direction:column; gap:0.75rem; font-size:0.95rem; margin-bottom:2rem;">
-                <div><strong>Brand Name:</strong> MEDMOST</div>
-                <div><strong>Tagline:</strong> “World-Class Medical Treatment in India”</div>
-                <div>
-                  <strong>Phone / Card Placeholder:</strong> 
-                  <span style="color:var(--color-gold-300); font-weight:700;">+7 960 1726800999</span>
-                  <em style="color:#A3BFB3; font-size:0.8rem; margin-left:6px;">(Sample from card - pending final confirmation)</em>
-                </div>
-                <div><strong>WhatsApp:</strong> Active for consultation messaging</div>
-                <div><strong>English & Multilingual:</strong> Built for international patients</div>
-              </div>
-              <div style="display:flex; gap:1rem; flex-wrap:wrap;">
-                <a href="https://wa.me/79601726800999" target="_blank" rel="noopener noreferrer" class="btn btn-gold">
-                  Connect on WhatsApp
-                </a>
-                <a href="contact.html" class="btn btn-outline-white">
-                  Full Contact Page &rarr;
-                </a>
-              </div>
-            </div>
-
-            <!-- QR Code Area Placeholder -->
-            <div class="qr-box-wrapper" id="qr-section">
-              <div class="qr-box-icon">
-                <svg width="100" height="100" viewBox="0 0 200 200" fill="#0E4D38">
-                  <rect x="20" y="20" width="50" height="50" fill="none" stroke="#0E4D38" stroke-width="10"/>
-                  <rect x="35" y="35" width="20" height="20" fill="#0E4D38"/>
-                  <rect x="130" y="20" width="50" height="50" fill="none" stroke="#0E4D38" stroke-width="10"/>
-                  <rect x="145" y="35" width="20" height="20" fill="#0E4D38"/>
-                  <rect x="20" y="130" width="50" height="50" fill="none" stroke="#0E4D38" stroke-width="10"/>
-                  <rect x="35" y="145" width="20" height="20" fill="#0E4D38"/>
-                  <rect x="85" y="25" width="15" height="15"/>
-                  <rect x="85" y="55" width="15" height="25"/>
-                  <rect x="25" y="85" width="20" height="15"/>
-                  <rect x="60" y="85" width="25" height="15"/>
-                  <rect x="95" y="95" width="15" height="15"/>
-                  <rect x="120" y="85" width="25" height="20"/>
-                  <rect x="160" y="85" width="15" height="30"/>
-                  <rect x="85" y="130" width="20" height="20"/>
-                  <rect x="115" y="125" width="25" height="15"/>
-                  <rect x="150" y="130" width="25" height="25"/>
-                  <rect x="85" y="165" width="30" height="15"/>
-                  <rect x="135" y="165" width="40" height="15"/>
-                </svg>
-              </div>
-              <div class="qr-label">Scan to Connect (Demo QR)</div>
-              <div class="qr-subtext">Destination URL will be configured once confirmed.</div>
-              <button class="btn btn-outline btn-sm" style="margin-top:1rem; width:100%;" onclick="showQrDemo()">
-                Preview QR Modal
-              </button>
-            </div>
-          </div>
+        <div style="display:flex; justify-content:center; gap:1rem; flex-wrap:wrap;">
+          <a href="consultation.html" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg">
+            Request Free Consultation &rarr;
+          </a>
+          <a href="contact.html" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-lg">
+            Contact Us & Card Details
+          </a>
         </div>
       </div>
     </section>
@@ -696,17 +326,15 @@
   <div id="site-footer-container"></div>
 
   <!-- Scripts -->
+  <script src="js/translations.js"></script>
   <script src="js/components.js"></script>
   <script src="js/main.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       renderHeader('home');
       renderFooter();
-      renderHomeTreatments();
-      renderDoctorCards('home-doctors-grid', 'all');
-      renderHospitalCards('home-hospitals-grid', 'all');
-      renderCityCards('home-cities-grid');
-      initFaqAccordion();
+      renderOfficialDoctors('home-doctors-grid');
+      renderTreatmentsGrid('home-treatments-grid');
     });
   </script>
 </body>
