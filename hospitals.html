@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Accredited Hospitals (Demo Directory) | MEDMOST India</title>
+  <meta name="description" content="Explore premier quaternary hospital hubs across India for international medical travel with MEDMOST." />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" type="image/svg+xml" href="assets/images/logo.svg" />
+</head>
+<body>
+
+  <div id="site-header-container"></div>
+
+  <main>
+    <!-- Page Banner -->
+    <section class="page-banner">
+      <div class="container">
+        <div class="breadcrumb">
+          <a href="index.html">Home</a> &nbsp;/&nbsp; <span>Hospitals</span>
+        </div>
+        <h1>Premier Hospitals in India</h1>
+        <p>
+          Discover quaternary care hospitals in India featuring JCI and NABH accreditations, international patient suites, and multi-organ transplant wings.
+        </p>
+      </div>
+    </section>
+
+    <!-- Hospitals Directory Section -->
+    <section class="section">
+      <div class="container">
+        <!-- City Filter Bar -->
+        <div class="filter-bar">
+          <div style="font-weight: 700; color: var(--color-forest-900); font-size: 0.9rem;">
+            Filter by Destination City:
+          </div>
+          <div class="filter-btn-group" id="hospital-filters">
+            <button type="button" class="filter-chip active" onclick="setHospFilter('all', this)">All Hubs</button>
+            <button type="button" class="filter-chip" onclick="setHospFilter('Delhi', this)">Delhi NCR</button>
+            <button type="button" class="filter-chip" onclick="setHospFilter('Mumbai', this)">Mumbai</button>
+            <button type="button" class="filter-chip" onclick="setHospFilter('Chennai', this)">Chennai</button>
+            <button type="button" class="filter-chip" onclick="setHospFilter('Bengaluru', this)">Bengaluru</button>
+            <button type="button" class="filter-chip" onclick="setHospFilter('Hyderabad', this)">Hyderabad</button>
+          </div>
+        </div>
+
+        <!-- Hospitals Grid -->
+        <div class="card-grid-3" id="hospitals-directory-grid"></div>
+
+        <!-- Notice Box -->
+        <div class="notice-box" style="margin-top: 3.5rem;">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+          <div>
+            <strong>Hospital Partnership Notice:</strong>
+            <p style="margin-top: 0.25rem; font-size: 0.875rem;">
+              The hospital institutions displayed in this initial prototype represent the style and class of quaternary hospitals MEDMOST aims to coordinate with. Actual hospital selection is confirmed based on mutual accreditation verification and case evaluation.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Consultation CTA -->
+    <section class="section bg-light-mint" style="text-align: center;">
+      <div class="container container-narrow">
+        <span class="section-tag gold">Hospital Coordination</span>
+        <h2 style="margin-bottom: 1rem;">Need Assistance Selecting the Right Hospital?</h2>
+        <p style="margin-bottom: 2rem;">
+          Every patient has unique clinical priorities. We help compare hospital accreditation, surgeon experience, room amenities, and package quotes across India's top cities.
+        </p>
+        <button class="btn btn-primary btn-lg" onclick="openConsultationModal()">
+          Request Hospital Comparison
+        </button>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer-container"></div>
+
+  <script src="js/components.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    function setHospFilter(city, el) {
+      document.querySelectorAll('#hospital-filters .filter-chip').forEach(c => c.classList.remove('active'));
+      el.classList.add('active');
+      renderHospitalCards('hospitals-directory-grid', city);
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      renderHeader('hospitals');
+      renderFooter();
+      renderHospitalCards('hospitals-directory-grid', 'all');
+    });
+  </script>
+</body>
+</html>

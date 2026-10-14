@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>All Treatments & Specialties | MEDMOST India</title>
+  <meta name="description" content="Explore advanced medical treatments in India with MEDMOST. Cardiology, oncology, orthopaedics, neurosurgery, organ transplants, and more." />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" type="image/svg+xml" href="assets/images/logo.svg" />
+</head>
+<body>
+
+  <div id="site-header-container"></div>
+
+  <main>
+    <!-- Page Banner -->
+    <section class="page-banner">
+      <div class="container">
+        <div class="breadcrumb">
+          <a href="index.html">Home</a> &nbsp;/&nbsp; <span>Treatments</span>
+        </div>
+        <h1>Medical Specialties & Treatments</h1>
+        <p>
+          Discover India's renowned clinical disciplines. From minimally invasive robotic heart surgery to living-donor transplants, explore comprehensive medical options.
+        </p>
+      </div>
+    </section>
+
+    <!-- Treatments Directory Section -->
+    <section class="section">
+      <div class="container">
+        <!-- Search & Filter Bar -->
+        <div class="filter-bar">
+          <div style="flex: 1; min-width: 250px;">
+            <input type="text" id="treatment-search" class="form-control" placeholder="Search treatment (e.g. bypass, cancer, knee, IVF)..." oninput="filterTreatments()" />
+          </div>
+          <div class="filter-btn-group" id="treatment-filter-chips">
+            <button type="button" class="filter-chip active" onclick="setTreatmentFilter('all', this)">All (12)</button>
+            <button type="button" class="filter-chip" onclick="setTreatmentFilter('surgical', this)">Surgical Care</button>
+            <button type="button" class="filter-chip" onclick="setTreatmentFilter('transplant', this)">Transplants</button>
+            <button type="button" class="filter-chip" onclick="setTreatmentFilter('wellness', this)">Cosmetic & Dental</button>
+          </div>
+        </div>
+
+        <!-- Treatments Grid -->
+        <div class="treatments-grid" id="full-treatments-grid"></div>
+
+        <div class="notice-box" style="margin-top: 3.5rem;">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+          <div>
+            <strong>Disclaimer on Treatment Availability:</strong>
+            <p style="margin-top: 0.25rem; font-size: 0.875rem;">
+              The treatments listed above represent procedures performed across accredited Indian hospital systems. Availability of specific specialists and treatment dates is confirmed with the partner hospital following preliminary review of your medical documents.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Consultation CTA Section -->
+    <section class="section bg-light-mint" style="text-align: center;">
+      <div class="container container-narrow">
+        <span class="section-tag gold">Need Guidance?</span>
+        <h2 style="margin-bottom: 1rem;">Not Sure Which Treatment You Need?</h2>
+        <p style="margin-bottom: 2rem;">
+          Send us your current doctor's diagnostic summary or lab report. Our medical travel team will help you identify the appropriate department and hospital options in India.
+        </p>
+        <button class="btn btn-primary btn-lg" onclick="openConsultationModal()">
+          Request Free Treatment Review
+        </button>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer-container"></div>
+
+  <script src="js/components.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    let currentFilter = 'all';
+
+    function renderTreatmentsList(list) {
+      const container = document.getElementById('full-treatments-grid');
+      if (!container) return;
+
+      if (list.length === 0) {
+        container.innerHTML = `<p style="grid-column:1/-1; text-align:center; padding:3rem; color:var(--color-text-muted);">No treatments match your search. Try another term or contact us for personalized guidance.</p>`;
+        return;
+      }
+
+      container.innerHTML = list.map(t => `
+        <div class="treatment-card">
+          <div class="treatment-header">
+            <div class="treatment-icon">
+              ${t.icon}
+            </div>
+            <span class="treatment-badge">Specialty</span>
+          </div>
+          <h3 class="treatment-title">${t.title}</h3>
+          <p class="treatment-desc">${t.tagline}</p>
+          
+          <div style="background:var(--color-surface-soft); padding:0.75rem; border-radius:var(--radius-sm); margin-bottom:1.25rem; font-size:0.8rem; color:var(--color-forest-800);">
+            <strong>Stay:</strong> ${t.stayDuration.split('|')[0]}<br/>
+            <strong>Savings:</strong> ${t.approxSavings}
+          </div>
+
+          <div class="treatment-footer">
+            <a href="treatment-detail.html?category=${t.id}" class="treatment-link">
+              View Procedure Details &rarr;
+            </a>
+            <button type="button" class="btn btn-sm btn-outline" onclick="openConsultationModal('${t.id}')">
+              Enquire
+            </button>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function filterTreatments() {
+      const query = document.getElementById('treatment-search').value.toLowerCase().trim();
+      let list = TREATMENT_CATEGORIES;
+
+      if (currentFilter === 'surgical') {
+        list = list.filter(t => ['cardiology', 'oncology', 'orthopaedics', 'neurosurgery', 'gastroenterology', 'urology'].includes(t.id));
+      } else if (currentFilter === 'transplant') {
+        list = list.filter(t => ['transplant', 'nephrology'].includes(t.id));
+      } else if (currentFilter === 'wellness') {
+        list = list.filter(t => ['dental', 'plastic-surgery', 'ophthalmology', 'fertility'].includes(t.id));
+      }
+
+      if (query) {
+        list = list.filter(t => 
+          t.title.toLowerCase().includes(query) || 
+          t.overview.toLowerCase().includes(query) ||
+          t.commonProcedures.some(p => p.toLowerCase().includes(query))
+        );
+      }
+
+      renderTreatmentsList(list);
+    }
+
+    function setTreatmentFilter(type, el) {
+      currentFilter = type;
+      document.querySelectorAll('#treatment-filter-chips .filter-chip').forEach(c => c.classList.remove('active'));
+      el.classList.add('active');
+      filterTreatments();
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      renderHeader('treatments');
+      renderFooter();
+      renderTreatmentsList(TREATMENT_CATEGORIES);
+    });
+  </script>
+</body>
+</html>
