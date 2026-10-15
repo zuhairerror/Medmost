@@ -31,7 +31,11 @@ window.medmostAuth = (function() {
       }
 
       try {
-        _client = window.supabase.createClient(config.url, config.anonKey, {
+        const cleanUrl = (window.MEDMOST_SUPABASE_CONFIG && typeof window.MEDMOST_SUPABASE_CONFIG.cleanSupabaseUrl === 'function')
+          ? window.MEDMOST_SUPABASE_CONFIG.cleanSupabaseUrl(config.url)
+          : (config.url || '').replace(/\/rest\/v1\/?.*$/i, '').replace(/\/auth\/v1\/?.*$/i, '').replace(/\/+$/, '');
+
+        _client = window.supabase.createClient(cleanUrl, config.anonKey, {
           auth: {
             persistSession: true,
             autoRefreshToken: true,
