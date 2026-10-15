@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Email Verification | MEDMOST Medical Tourism India</title>
+  <meta name="description" content="Verify your MEDMOST patient account email address." />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" type="image/svg+xml" href="assets/images/logo.svg" />
+</head>
+<body>
+
+  <!-- Site Header Container -->
+  <div id="site-header-container"></div>
+
+  <main>
+    <section class="auth-section">
+      <div class="auth-card" style="text-align: center;">
+        <div class="auth-card-body" style="padding: 3.5rem 2rem;">
+          
+          <!-- Verifying state -->
+          <div id="confirm-verifying">
+            <div class="auth-spinner" style="margin: 0 auto 1.5rem auto;"></div>
+            <h2 style="font-size: 1.5rem; margin-bottom: 0.5rem;">Confirming Your Email</h2>
+            <p style="color: var(--color-text-muted); font-size: 0.95rem;">
+              Please wait while we verify your patient registration with MEDMOST...
+            </p>
+          </div>
+
+          <!-- Success state -->
+          <div id="confirm-success" style="display: none;">
+            <div style="width: 72px; height: 72px; border-radius: 50%; background: #ECFDF5; border: 2px solid #10B981; color: #059669; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem auto;">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <span class="auth-brand-badge" style="background: #ECFDF5; color: #065F46; border: 1px solid #A7F3D0;">Email Verified</span>
+            <h2 style="font-size: 1.65rem; color: var(--color-text-heading); margin-bottom: 0.5rem;">Welcome to MEDMOST!</h2>
+            <p style="color: var(--color-text-muted); font-size: 0.95rem; line-height: 1.6; max-width: 380px; margin: 0 auto 1.75rem auto;">
+              Your email address has been successfully confirmed. You now have full access to your clinical consultations and medical travel coordinator.
+            </p>
+            <div style="display: flex; flex-direction: column; gap: 0.75rem; max-width: 280px; margin: 0 auto;">
+              <a href="dashboard.html" class="btn btn-primary btn-lg" style="text-align: center;">
+                Go to Dashboard &rarr;
+              </a>
+              <small id="countdown-text" style="color: var(--color-text-light); font-size: 0.8rem;">
+                Redirecting automatically in <span id="countdown-sec">4</span> seconds...
+              </small>
+            </div>
+          </div>
+
+          <!-- Error state -->
+          <div id="confirm-error" style="display: none;">
+            <div style="width: 72px; height: 72px; border-radius: 50%; background: #FEF2F2; border: 2px solid #EF4444; color: #DC2626; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem auto;">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+            </div>
+            <h2 style="font-size: 1.5rem; color: #991B1B; margin-bottom: 0.5rem;">Verification Issue</h2>
+            <p id="confirm-error-msg" style="color: var(--color-text-muted); font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.75rem;">
+              The confirmation link is invalid or has expired. If your email is already confirmed, you can sign in directly.
+            </p>
+            <div style="display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap;">
+              <a href="login.html" class="btn btn-primary">
+                Proceed to Login
+              </a>
+              <a href="signup.html" class="btn btn-outline">
+                Sign Up Again
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Reusable Dynamic Footer -->
+  <div id="site-footer-container"></div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/supabase-config.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/translations.js"></script>
+  <script src="js/components.js"></script>
+  <script src="js/main.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', async () => {
+      renderHeader();
+      renderFooter();
+
+      const verifyingBox = document.getElementById('confirm-verifying');
+      const successBox = document.getElementById('confirm-success');
+      const errorBox = document.getElementById('confirm-error');
+      const errorMsg = document.getElementById('confirm-error-msg');
+
+      try {
+        const client = await window.medmostAuth.init();
+        if (!client) {
+          throw new Error('Supabase configuration missing.');
+        }
+
+        // Supabase v2 automatically processes #access_token or ?code
+        // Check session or listen to auth state
+        let isDone = false;
+
+        function showSuccess() {
+          if (isDone) return;
+          isDone = true;
+          verifyingBox.style.display = 'none';
+          errorBox.style.display = 'none';
+          successBox.style.display = 'block';
+
+          let timeLeft = 4;
+          const countSpan = document.getElementById('countdown-sec');
+          const timer = setInterval(() => {
+            timeLeft--;
+            if (countSpan) countSpan.textContent = timeLeft;
+            if (timeLeft <= 0) {
+              clearInterval(timer);
+              window.location.href = 'dashboard.html';
+            }
+          }, 1000);
+        }
+
+        // Check if there is an error parameter in hash or query
+        const urlParams = new URLSearchParams(window.location.search);
+        const hash = window.location.hash;
+        if (urlParams.get('error') || hash.includes('error=')) {
+          const errDesc = urlParams.get('error_description') || 'Verification link expired or already used.';
+          throw new Error(decodeURIComponent(errDesc.replace(/\+/g, ' ')));
+        }
+
+        // Check existing or newly set session
+        const session = await window.medmostAuth.getSession();
+        if (session && session.user) {
+          showSuccess();
+          return;
+        }
+
+        client.auth.onAuthStateChange((event, s) => {
+          if ((event === 'SIGNED_IN' || event === 'USER_UPDATED' || event === 'INITIAL_SESSION') && s) {
+            showSuccess();
+          }
+        });
+
+        // Give Supabase client 2.5 seconds to complete URL code exchange
+        setTimeout(async () => {
+          if (!isDone) {
+            const finalSession = await window.medmostAuth.getSession();
+            if (finalSession) {
+              showSuccess();
+            } else {
+              verifyingBox.style.display = 'none';
+              errorBox.style.display = 'block';
+            }
+          }
+        }, 2500);
+
+      } catch (err) {
+        console.error('Confirmation error:', err);
+        verifyingBox.style.display = 'none';
+        errorBox.style.display = 'block';
+        if (err && err.message) {
+          errorMsg.textContent = err.message;
+        }
+      }
+    });
+  </script>
+</body>
+</html>

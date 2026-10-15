@@ -18,6 +18,10 @@ const TRANSLATIONS = {
     nav_consultation: "Free Consultation",
     nav_desk: "24/7 International Patient Assistance Desk",
     nav_whatsapp: "WhatsApp Support Available",
+    nav_login: "Login",
+    nav_signup: "Sign Up",
+    nav_dashboard: "Dashboard",
+    nav_logout: "Log Out",
     
     // Hero
     hero_badge: "International Patient Healthcare Partner",
@@ -103,6 +107,10 @@ const TRANSLATIONS = {
     nav_consultation: "निःशुल्क परामर्श",
     nav_desk: "24/7 अंतर्राष्ट्रीय मरीज सहायता डेस्क",
     nav_whatsapp: "व्हाट्सएप सहायता उपलब्ध",
+    nav_login: "लॉग इन",
+    nav_signup: "साइन अप",
+    nav_dashboard: "डैशबोर्ड",
+    nav_logout: "लॉग आउट",
 
     // Hero
     hero_badge: "अंतर्राष्ट्रीय मरीज स्वास्थ्य सेवा सहयोगी",
@@ -188,6 +196,10 @@ const TRANSLATIONS = {
     nav_consultation: "Консультация",
     nav_desk: "Круглосуточная служба поддержки иностранных пациентов",
     nav_whatsapp: "Поддержка в WhatsApp доступна",
+    nav_login: "Войти",
+    nav_signup: "Регистрация",
+    nav_dashboard: "Кабинет",
+    nav_logout: "Выйти",
 
     // Hero
     hero_badge: "Партнер по медицинскому туризму",
@@ -273,6 +285,10 @@ const TRANSLATIONS = {
     nav_consultation: "استشارة مجانية",
     nav_desk: "مكتب مساعدة المرضى الدوليين على مدار الساعة",
     nav_whatsapp: "الدعم عبر واتساب متاح",
+    nav_login: "تسجيل الدخول",
+    nav_signup: "إنشاء حساب",
+    nav_dashboard: "لوحة التحكم",
+    nav_logout: "تسجيل الخروج",
 
     // Hero
     hero_badge: "شريك الرعاية الصحية للمرضى الدوليين",

@@ -1424,3 +1424,540 @@ p {
 .modal-body {
   padding: 1.75rem 2rem 2rem 2rem;
 }
+
+/* ==========================================================================
+   Supabase Authentication & Patient Dashboard Styles
+   ========================================================================== */
+
+/* Navbar Auth Actions */
+.nav-auth-container {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-right: 0.4rem;
+}
+
+.nav-auth-link {
+  color: var(--color-text-heading);
+  font-weight: 600;
+  font-size: 0.85rem;
+  padding: 0.4rem 0.65rem;
+  border-radius: var(--radius-sm);
+  transition: color var(--transition-fast);
+}
+
+.nav-auth-link:hover {
+  color: var(--color-turquoise-700);
+}
+
+.nav-signup-btn {
+  font-size: 0.825rem;
+  padding: 0.4rem 0.85rem;
+  border-color: var(--color-turquoise-600);
+  color: var(--color-turquoise-700);
+  background: transparent;
+}
+
+.nav-signup-btn:hover {
+  background: var(--color-turquoise-700);
+  color: #FFFFFF;
+}
+
+.nav-user-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: var(--color-turquoise-50);
+  border: 1px solid var(--color-turquoise-200);
+  padding: 0.2rem 0.35rem;
+  border-radius: var(--radius-full);
+}
+
+.nav-user-dashboard-link {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-weight: 600;
+  font-size: 0.825rem;
+  color: var(--color-turquoise-900);
+  padding: 0.25rem 0.7rem;
+  border-radius: var(--radius-full);
+  transition: background var(--transition-fast);
+}
+
+.nav-user-dashboard-link:hover {
+  background: var(--color-turquoise-100);
+  color: var(--color-turquoise-950);
+}
+
+.nav-logout-btn {
+  background: none;
+  border: none;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  padding: 0.3rem 0.45rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-fast);
+}
+
+.nav-logout-btn:hover {
+  color: #DC2626;
+  background: #FEE2E2;
+}
+
+/* Authentication Pages */
+.auth-section {
+  min-height: calc(100vh - 220px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3.5rem 1.25rem;
+  background: radial-gradient(circle at 85% 15%, var(--color-turquoise-50) 0%, #F8FAFC 60%);
+}
+
+.auth-card {
+  background: #FFFFFF;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
+  max-width: 480px;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  transition: transform var(--transition-fast);
+}
+
+.auth-card-header {
+  padding: 2.25rem 2.25rem 1.5rem 2.25rem;
+  text-align: center;
+  border-bottom: 1px solid var(--color-border);
+  background: linear-gradient(180deg, #FFFFFF 0%, var(--color-turquoise-50) 100%);
+}
+
+.auth-brand-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: var(--color-turquoise-100);
+  color: var(--color-turquoise-900);
+  padding: 0.3rem 0.8rem;
+  border-radius: var(--radius-full);
+  font-size: 0.775rem;
+  font-weight: 700;
+  margin-bottom: 0.9rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.auth-card-title {
+  font-size: 1.65rem;
+  color: var(--color-text-heading);
+  margin-bottom: 0.4rem;
+}
+
+.auth-card-subtitle {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+}
+
+.auth-card-body {
+  padding: 2rem 2.25rem;
+}
+
+.auth-card-footer {
+  padding: 1.25rem 2.25rem 1.75rem 2.25rem;
+  text-align: center;
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  border-top: 1px solid var(--color-border);
+  background: var(--color-surface-soft);
+}
+
+.auth-card-footer a {
+  color: var(--color-turquoise-700);
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.auth-card-footer a:hover {
+  color: var(--color-turquoise-900);
+}
+
+/* Password Input with Visibility Toggle */
+.password-input-wrap {
+  position: relative;
+}
+
+.password-input-wrap .form-control {
+  padding-right: 2.75rem;
+}
+
+.password-toggle-btn {
+  position: absolute;
+  top: 50%;
+  right: 0.75rem;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: var(--color-text-light);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.25rem;
+  border-radius: var(--radius-sm);
+  transition: color var(--transition-fast);
+}
+
+.password-toggle-btn:hover {
+  color: var(--color-turquoise-700);
+}
+
+/* Password Strength Indicator */
+.password-strength-bar {
+  height: 4px;
+  background: #E2E8F0;
+  border-radius: var(--radius-full);
+  margin-top: 0.4rem;
+  overflow: hidden;
+  display: flex;
+}
+
+.password-strength-fill {
+  height: 100%;
+  width: 0%;
+  transition: width 0.3s ease, background-color 0.3s ease;
+}
+
+.password-strength-text {
+  font-size: 0.725rem;
+  color: var(--color-text-light);
+  margin-top: 0.2rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Form Helper Links */
+.form-options-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
+  font-size: 0.825rem;
+}
+
+.form-forgot-link {
+  color: var(--color-turquoise-700);
+  font-weight: 600;
+  transition: color var(--transition-fast);
+}
+
+.form-forgot-link:hover {
+  color: var(--color-turquoise-900);
+  text-decoration: underline;
+}
+
+/* Auth Alerts */
+.auth-alert {
+  padding: 0.85rem 1rem;
+  border-radius: var(--radius-md);
+  font-size: 0.85rem;
+  line-height: 1.5;
+  margin-bottom: 1.25rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+}
+
+.auth-alert svg {
+  flex-shrink: 0;
+  margin-top: 0.15rem;
+}
+
+.auth-alert-error {
+  background: #FEF2F2;
+  border: 1px solid #FECACA;
+  color: #991B1B;
+}
+
+.auth-alert-success {
+  background: #ECFDF5;
+  border: 1px solid #A7F3D0;
+  color: #065F46;
+}
+
+.auth-alert-info {
+  background: var(--color-turquoise-50);
+  border: 1px solid var(--color-turquoise-200);
+  color: var(--color-turquoise-900);
+}
+
+.auth-alert-warning {
+  background: #FFFBEB;
+  border: 1px solid #FDE68A;
+  color: #92400E;
+}
+
+/* ==========================================================================
+   Patient Dashboard Styles
+   ========================================================================== */
+.dashboard-page {
+  padding: 2.5rem 0 4.5rem 0;
+  min-height: calc(100vh - 250px);
+}
+
+.dashboard-header-card {
+  background: linear-gradient(135deg, var(--color-turquoise-950) 0%, var(--color-turquoise-900) 100%);
+  color: #FFFFFF;
+  border-radius: var(--radius-xl);
+  padding: 2.25rem;
+  margin-bottom: 2rem;
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.dashboard-user-info {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.dashboard-avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--color-turquoise-600), var(--color-turquoise-400));
+  color: #FFFFFF;
+  font-size: 1.6rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  border: 2px solid rgba(255,255,255,0.2);
+}
+
+.dashboard-user-meta h2 {
+  color: #FFFFFF;
+  font-size: 1.5rem;
+  margin-bottom: 0.2rem;
+}
+
+.dashboard-user-meta p {
+  color: #CCFBF1;
+  font-size: 0.9rem;
+  margin-bottom: 0.4rem;
+}
+
+.user-status-badges {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.badge-verified {
+  background: rgba(16, 185, 129, 0.2);
+  color: #A7F3D0;
+  border: 1px solid rgba(16, 185, 129, 0.4);
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--radius-full);
+  font-size: 0.725rem;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.badge-unverified {
+  background: rgba(234, 179, 8, 0.2);
+  color: var(--color-yellow-300);
+  border: 1px solid rgba(234, 179, 8, 0.4);
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--radius-full);
+  font-size: 0.725rem;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.dashboard-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+/* Dashboard Grid Layout */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
+}
+
+@media (max-width: 992px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.dashboard-panel {
+  background: #FFFFFF;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+  margin-bottom: 1.75rem;
+}
+
+.dashboard-panel-header {
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.dashboard-panel-title {
+  font-size: 1.15rem;
+  color: var(--color-text-heading);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.dashboard-panel-body {
+  padding: 1.5rem;
+}
+
+/* Consultation History Items */
+.consultation-item-card {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+  margin-bottom: 1rem;
+  background: var(--color-surface-card);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.consultation-item-card:hover {
+  border-color: var(--color-turquoise-500);
+  box-shadow: var(--shadow-sm);
+}
+
+.consultation-item-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.6rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.consultation-ref-tag {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--color-turquoise-800);
+  background: var(--color-turquoise-100);
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--radius-sm);
+}
+
+.consultation-date-tag {
+  font-size: 0.75rem;
+  color: var(--color-text-light);
+}
+
+.consultation-meta-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 0.75rem;
+  margin-top: 0.75rem;
+  padding-top: 0.75rem;
+  border-top: 1px dashed var(--color-border);
+  font-size: 0.825rem;
+}
+
+.consultation-meta-item strong {
+  display: block;
+  font-size: 0.7rem;
+  color: var(--color-text-light);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.15rem;
+}
+
+.consultation-empty-state {
+  text-align: center;
+  padding: 3rem 1.5rem;
+}
+
+.consultation-empty-icon {
+  width: 64px;
+  height: 64px;
+  background: var(--color-turquoise-50);
+  color: var(--color-turquoise-700);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem auto;
+}
+
+/* Account Details List */
+.account-details-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.account-detail-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--color-surface-soft);
+  font-size: 0.875rem;
+}
+
+.account-detail-label {
+  color: var(--color-text-light);
+  font-weight: 500;
+}
+
+.account-detail-value {
+  color: var(--color-text-main);
+  font-weight: 600;
+}
+
+/* Page Protection Preloader */
+.auth-preloader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 50vh;
+  gap: 1rem;
+}
+
+.auth-spinner {
+  width: 44px;
+  height: 44px;
+  border: 3.5px solid var(--color-turquoise-100);
+  border-top-color: var(--color-turquoise-700);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}

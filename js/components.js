@@ -79,6 +79,12 @@ function renderHeader(activePage = 'home') {
 
         <!-- Navbar Actions -->
         <div class="nav-actions">
+          <!-- Auth State Container (Desktop) -->
+          <div id="nav-auth-container" class="nav-auth-container">
+            <a href="login.html" class="nav-auth-link" data-i18n="nav_login">Login</a>
+            <a href="signup.html" class="btn btn-outline btn-sm nav-signup-btn" data-i18n="nav_signup">Sign Up</a>
+          </div>
+
           <a href="consultation.html" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm btn-consult-nav">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
             <span data-i18n="nav_consultation">Free Consultation</span>
@@ -110,6 +116,11 @@ function renderHeader(activePage = 'home') {
         <li><a href="contact.html" target="_blank" rel="noopener noreferrer" class="${activePage === 'contact' ? 'active' : ''}" data-i18n="nav_contact">Contact</a></li>
       </ul>
       <div style="margin-top: auto; display: flex; flex-direction: column; gap: 0.75rem;">
+        <!-- Auth State Container (Mobile) -->
+        <div id="mobile-nav-auth-container" class="mobile-nav-auth-container" style="display:flex; flex-direction:column; gap:0.5rem;">
+          <a href="login.html" class="btn btn-outline btn-sm" style="text-align:center;" data-i18n="nav_login">Login</a>
+          <a href="signup.html" class="btn btn-outline btn-sm" style="text-align:center;" data-i18n="nav_signup">Sign Up</a>
+        </div>
         <a href="consultation.html" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="text-align:center;">
           <span data-i18n="nav_consultation">Get a Free Consultation</span>
         </a>
@@ -124,6 +135,7 @@ function renderHeader(activePage = 'home') {
   if (typeof applyTranslations === 'function') {
     applyTranslations();
   }
+  syncNavAuthState();
 }
 
 // Render Reusable Footer
@@ -443,4 +455,134 @@ async function handleDemoFormSubmit(e, formId) {
     </div>
   `;
 }
+
+let _authScriptsLoading = false;
+function ensureAuthScripts(callback) {
+  if (window.medmostAuth) {
+    if (callback) callback();
+    return;
+  }
+  if (_authScriptsLoading) return;
+  _authScriptsLoading = true;
+
+  function loadScript(src, next) {
+    const s = document.createElement('script');
+    s.src = src;
+    s.onload = next;
+    s.onerror = () => { _authScriptsLoading = false; };
+    document.head.appendChild(s);
+  }
+
+  function step3() {
+    if (window.medmostAuth) {
+      _authScriptsLoading = false;
+      if (callback) callback();
+    } else {
+      loadScript('js/auth.js', () => {
+        _authScriptsLoading = false;
+        if (callback) callback();
+      });
+    }
+  }
+
+  function step2() {
+    if (window.MEDMOST_SUPABASE_CONFIG) {
+      step3();
+    } else {
+      loadScript('js/supabase-config.js', step3);
+    }
+  }
+
+  if (typeof window.supabase === 'undefined') {
+    loadScript('https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2', step2);
+  } else {
+    step2();
+  }
+}
+
+/**
+ * Synchronizes the Navigation Bar with Supabase Auth state (Desktop & Mobile)
+ */
+function syncNavAuthState() {
+  if (typeof window.medmostAuth === 'undefined') {
+    ensureAuthScripts(() => syncNavAuthState());
+    return;
+  }
+
+  window.medmostAuth.getCurrentUser().then(user => {
+    const desktopContainer = document.getElementById('nav-auth-container');
+    const mobileContainer = document.getElementById('mobile-nav-auth-container');
+    if (!desktopContainer && !mobileContainer) return;
+
+    if (user) {
+      const fullName = (user.user_metadata && user.user_metadata.full_name) || user.email.split('@')[0];
+      const firstName = fullName.split(' ')[0] || 'Patient';
+
+      if (desktopContainer) {
+        desktopContainer.innerHTML = `
+          <div class="nav-user-badge">
+            <a href="dashboard.html" class="nav-user-dashboard-link" title="View Patient Dashboard">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              <span>${escapeHtml(firstName)}</span>
+            </a>
+            <button onclick="handleLogoutClick()" class="nav-logout-btn" title="Sign Out" aria-label="Sign Out">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+            </button>
+          </div>
+        `;
+      }
+
+      if (mobileContainer) {
+        mobileContainer.innerHTML = `
+          <a href="dashboard.html" class="btn btn-secondary btn-sm" style="text-align:center; display:flex; align-items:center; justify-content:center; gap:6px;">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            Patient Dashboard (${escapeHtml(firstName)})
+          </a>
+          <button onclick="handleLogoutClick()" class="btn btn-outline btn-sm" style="text-align:center; width:100%;">
+            Sign Out
+          </button>
+        `;
+      }
+    } else {
+      if (desktopContainer) {
+        desktopContainer.innerHTML = `
+          <a href="login.html" class="nav-auth-link" data-i18n="nav_login">Login</a>
+          <a href="signup.html" class="btn btn-outline btn-sm nav-signup-btn" data-i18n="nav_signup">Sign Up</a>
+        `;
+      }
+      if (mobileContainer) {
+        mobileContainer.innerHTML = `
+          <a href="login.html" class="btn btn-outline btn-sm" style="text-align:center;" data-i18n="nav_login">Login</a>
+          <a href="signup.html" class="btn btn-outline btn-sm" style="text-align:center;" data-i18n="nav_signup">Sign Up</a>
+        `;
+      }
+    }
+
+    if (typeof applyTranslations === 'function') {
+      applyTranslations();
+    }
+  }).catch(err => {
+    // Auth may not be ready or anon key pending
+  });
+}
+
+function handleLogoutClick() {
+  if (window.medmostAuth) {
+    window.medmostAuth.signOut().then(() => {
+      window.location.href = 'login.html?logged_out=1';
+    });
+  }
+}
+
+function escapeHtml(str) {
+  if (!str) return '';
+  return String(str).replace(/[&<>"']/g, function(m) {
+    return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[m];
+  });
+}
+
+// Listen for auth state changes across all tabs/windows
+document.addEventListener('medmost:auth-changed', () => {
+  syncNavAuthState();
+});
 
